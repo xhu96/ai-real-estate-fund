@@ -1,0 +1,65 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ai-real-estate-fund"
+version = "0.7.0"
+description = "Deterministic, auditable real estate diligence: a config-driven institutional committee with underwriting, scenarios, backtesting, FastAPI service, React dashboard, and operational controls."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Xhulio L." }]
+keywords = ["real-estate", "agents", "llm", "underwriting", "investment", "fastapi", "react", "backtesting"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Office/Business :: Financial :: Investment",
+]
+dependencies = []
+
+[project.optional-dependencies]
+api = ["fastapi>=0.110", "uvicorn[standard]>=0.27", "pydantic>=2.0", "python-multipart>=0.0.9"]
+prod = ["fastapi>=0.110", "uvicorn[standard]>=0.27", "pydantic>=2.0", "gunicorn>=22.0"]
+dev = ["pytest>=8.0", "ruff>=0.5", "mypy>=1.10", "build>=1.2", "pip-audit>=2.7"]
+all = [
+  "fastapi>=0.110",
+  "uvicorn[standard]>=0.27",
+  "pydantic>=2.0",
+  "python-multipart>=0.0.9",
+  "gunicorn>=22.0",
+  "pytest>=8.0",
+  "ruff>=0.5",
+  "mypy>=1.10",
+  "build>=1.2",
+]
+
+[project.urls]
+Homepage = "https://github.com/xhu96/ai-real-estate-fund"
+Repository = "https://github.com/xhu96/ai-real-estate-fund"
+Issues = "https://github.com/xhu96/ai-real-estate-fund/issues"
+
+[project.scripts]
+ai-real-estate-fund = "ai_real_estate_fund.cli:main"
+ai-real-estate-backtest = "ai_real_estate_fund.backtesting.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 110
+target-version = "py310"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F"]
+ignore = ["E501"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
