@@ -1,0 +1,33 @@
+services:
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env.example
+    environment:
+      APP_ENV: development
+      ENABLE_DEMO_MODE: "true"
+      REQUIRE_API_KEY: "false"
+      DATABASE_URL: sqlite:////app/data/app.db
+      AUDIT_DATABASE_URL: sqlite:////app/data/audit.db
+      CORS_ORIGINS: http://localhost:5173,http://localhost:8000
+    volumes:
+      - ./data:/app/data
+      - ./reports:/app/reports
+    healthcheck:
+      test: ["CMD", "python", "-m", "ai_real_estate_fund", "health", "--json"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+  frontend:
+    image: node:20-alpine
+    working_dir: /app
+    command: sh -c "npm install && npm run dev -- --host 0.0.0.0"
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./app/frontend:/app
+    environment:
+      VITE_API_BASE_URL: http://localhost:8000

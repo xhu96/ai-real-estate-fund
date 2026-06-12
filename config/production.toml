@@ -1,0 +1,17 @@
+[service]
+name = "ai-real-estate-fund"
+environment = "production"
+version = "0.6.0"
+
+[security]
+require_api_key = true
+require_tls = true
+enable_demo_mode = false
+enable_fixture_data = false
+max_payload_bytes = 1000000
+rate_limit_per_minute = 120
+
+[operations]
+data_retention_days = 365
+audit_retention_days = 2555
+require_human_approval_for_buy = true
