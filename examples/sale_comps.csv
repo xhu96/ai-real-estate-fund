@@ -1,0 +1,10 @@
+market,address,sale_price,square_feet,unit_count,bedrooms,bathrooms,distance_miles,sale_date,source,confidence,notes
+"San Antonio, TX",1518 W French Pl,315000,1820,2,4,2,0.5,2024-10-14,example_fixture,0.72,Fixture comp for demo only
+"San Antonio, TX",1002 W Craig Pl,342000,1950,2,4,2,0.8,2024-11-03,example_fixture,0.73,Fixture comp for demo only
+"San Antonio, TX",231 E Mistletoe Ave,298000,1750,2,4,2,1.0,2024-09-22,example_fixture,0.69,Fixture comp for demo only
+"Raleigh, NC",721 N East St,655000,3220,4,8,4,1.0,2024-08-30,example_fixture,0.69,Fixture comp for demo only
+"Raleigh, NC",1009 Wake Forest Rd,710000,3440,4,8,4,1.4,2024-12-01,example_fixture,0.71,Fixture comp for demo only
+"Raleigh, NC",504 Polk St,680000,3300,4,8,4,1.6,2024-10-19,example_fixture,0.68,Fixture comp for demo only
+"Cleveland, OH",3902 Walton Ave,155000,1340,1,3,1,0.7,2024-09-11,example_fixture,0.7,Fixture comp for demo only
+"Cleveland, OH",4809 Herman Ave,149000,1280,1,3,1,1.0,2024-10-24,example_fixture,0.67,Fixture comp for demo only
+"Cleveland, OH",5211 Bridge Ave,171000,1405,1,3,1,1.2,2024-11-15,example_fixture,0.68,Fixture comp for demo only

@@ -1,0 +1,53 @@
+[
+  {
+    "market": "San Antonio, TX",
+    "rent_growth_yoy": 0.035,
+    "appreciation_yoy": 0.032,
+    "vacancy_rate": 0.061,
+    "property_tax_rate": 0.018,
+    "insurance_rate": 0.0065,
+    "unemployment_rate": 0.039,
+    "population_growth_yoy": 0.014,
+    "job_growth_yoy": 0.018,
+    "landlord_friendliness_score": 7,
+    "liquidity_score": 7,
+    "crime_risk_score": 4.5,
+    "school_score": 6,
+    "source": "example_fixture",
+    "as_of": "2025-01-01"
+  },
+  {
+    "market": "Raleigh, NC",
+    "rent_growth_yoy": 0.042,
+    "appreciation_yoy": 0.041,
+    "vacancy_rate": 0.055,
+    "property_tax_rate": 0.010,
+    "insurance_rate": 0.0055,
+    "unemployment_rate": 0.034,
+    "population_growth_yoy": 0.020,
+    "job_growth_yoy": 0.025,
+    "landlord_friendliness_score": 6.5,
+    "liquidity_score": 8,
+    "crime_risk_score": 3.5,
+    "school_score": 7,
+    "source": "example_fixture",
+    "as_of": "2025-01-01"
+  },
+  {
+    "market": "Cleveland, OH",
+    "rent_growth_yoy": 0.023,
+    "appreciation_yoy": 0.021,
+    "vacancy_rate": 0.075,
+    "property_tax_rate": 0.021,
+    "insurance_rate": 0.006,
+    "unemployment_rate": 0.045,
+    "population_growth_yoy": -0.002,
+    "job_growth_yoy": 0.006,
+    "landlord_friendliness_score": 5.5,
+    "liquidity_score": 5.5,
+    "crime_risk_score": 5.5,
+    "school_score": 5,
+    "source": "example_fixture",
+    "as_of": "2025-01-01"
+  }
+]
