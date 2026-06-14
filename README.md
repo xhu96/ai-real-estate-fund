@@ -211,5 +211,3 @@ The suite includes golden-master tests that pin the consolidated families to byt
 Free for **noncommercial use** under the [PolyForm Noncommercial License 1.0.0](LICENSE) (research, personal study, hobby projects, education, nonprofits, and government). PolyForm Noncommercial is a source-available license, not an OSI-approved open-source license.
 
 **Commercial use requires a separate commercial license.** To request one, open a **[Commercial license request](https://github.com/xhu96/ai-real-estate-fund/issues/new?template=commercial-license.yml)** issue — leave your company and contact email, and the author will follow up. It's a dedicated request form (labeled `commercial-license`), not a bug report.
-
-Versions released before this license change remain under their original MIT terms.
