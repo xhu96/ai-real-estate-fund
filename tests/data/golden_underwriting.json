@@ -1,0 +1,452 @@
+{
+  "BadDebtModel": {
+    "base_value": 2293.02,
+    "confidence": 0.7,
+    "lens": "collection losses",
+    "notes": [
+      "Subject: bad debt",
+      "Analytical lens: collection losses",
+      "Stress factor: 1.10x",
+      "DSCR context: 1.48x",
+      "NOI context: $25,497",
+      "Rehab budget included in burden assessment: $18,000"
+    ],
+    "score": 95.5,
+    "stressed_value": 2522.32,
+    "subject": "bad debt",
+    "variance": 229.30000000000018,
+    "variance_pct": 0.0999991277878083
+  },
+  "CapitalReplacementModel": {
+    "base_value": 2293.02,
+    "confidence": 0.7,
+    "lens": "component useful life",
+    "notes": [
+      "Subject: capital replacements",
+      "Analytical lens: component useful life",
+      "Stress factor: 1.10x",
+      "DSCR context: 1.48x",
+      "NOI context: $25,497",
+      "Rehab budget included in burden assessment: $18,000"
+    ],
+    "score": 95.5,
+    "stressed_value": 2522.32,
+    "subject": "capital replacements",
+    "variance": 229.30000000000018,
+    "variance_pct": 0.0999991277878083
+  },
+  "ConcessionModel": {
+    "base_value": 2293.02,
+    "confidence": 0.7,
+    "lens": "effective rent",
+    "notes": [
+      "Subject: concessions",
+      "Analytical lens: effective rent",
+      "Stress factor: 1.10x",
+      "DSCR context: 1.48x",
+      "NOI context: $25,497",
+      "Rehab budget included in burden assessment: $18,000"
+    ],
+    "score": 95.5,
+    "stressed_value": 2522.32,
+    "subject": "concessions",
+    "variance": 229.30000000000018,
+    "variance_pct": 0.0999991277878083
+  },
+  "ConstructionDrawModel": {
+    "base_value": 2293.02,
+    "confidence": 0.7,
+    "lens": "rehab cash timing",
+    "notes": [
+      "Subject: construction draws",
+      "Analytical lens: rehab cash timing",
+      "Stress factor: 1.10x",
+      "DSCR context: 1.48x",
+      "NOI context: $25,497",
+      "Rehab budget included in burden assessment: $18,000"
+    ],
+    "score": 95.5,
+    "stressed_value": 2522.32,
+    "subject": "construction draws",
+    "variance": 229.30000000000018,
+    "variance_pct": 0.0999991277878083
+  },
+  "DebtServiceModel": {
+    "base_value": 2293.02,
+    "confidence": 0.7,
+    "lens": "amortization burden",
+    "notes": [
+      "Subject: debt service",
+      "Analytical lens: amortization burden",
+      "Stress factor: 1.10x",
+      "DSCR context: 1.48x",
+      "NOI context: $25,497",
+      "Rehab budget included in burden assessment: $18,000"
+    ],
+    "score": 95.5,
+    "stressed_value": 2522.32,
+    "subject": "debt service",
+    "variance": 229.30000000000018,
+    "variance_pct": 0.0999991277878083
+  },
+  "ExitCapRateModel": {
+    "base_value": 2293.02,
+    "confidence": 0.7,
+    "lens": "terminal value",
+    "notes": [
+      "Subject: exit cap rate",
+      "Analytical lens: terminal value",
+      "Stress factor: 1.10x",
+      "DSCR context: 1.48x",
+      "NOI context: $25,497",
+      "Rehab budget included in burden assessment: $18,000"
+    ],
+    "score": 95.5,
+    "stressed_value": 2522.32,
+    "subject": "exit cap rate",
+    "variance": 229.30000000000018,
+    "variance_pct": 0.0999991277878083
+  },
+  "InsuranceDeductibleModel": {
+    "base_value": 2293.02,
+    "confidence": 0.7,
+    "lens": "loss retention",
+    "notes": [
+      "Subject: insurance deductibles",
+      "Analytical lens: loss retention",
+      "Stress factor: 1.10x",
+      "DSCR context: 1.48x",
+      "NOI context: $25,497",
+      "Rehab budget included in burden assessment: $18,000"
+    ],
+    "score": 95.5,
+    "stressed_value": 2522.32,
+    "subject": "insurance deductibles",
+    "variance": 229.30000000000018,
+    "variance_pct": 0.0999991277878083
+  },
+  "InsuranceEscalationModel": {
+    "base_value": 2293.02,
+    "confidence": 0.7,
+    "lens": "premium shock",
+    "notes": [
+      "Subject: insurance escalation",
+      "Analytical lens: premium shock",
+      "Stress factor: 1.10x",
+      "DSCR context: 1.48x",
+      "NOI context: $25,497",
+      "Rehab budget included in burden assessment: $18,000"
+    ],
+    "score": 95.5,
+    "stressed_value": 2522.32,
+    "subject": "insurance escalation",
+    "variance": 229.30000000000018,
+    "variance_pct": 0.0999991277878083
+  },
+  "LeaseExpirationModel": {
+    "base_value": 2293.02,
+    "confidence": 0.7,
+    "lens": "rollover risk",
+    "notes": [
+      "Subject: lease expirations",
+      "Analytical lens: rollover risk",
+      "Stress factor: 1.10x",
+      "DSCR context: 1.48x",
+      "NOI context: $25,497",
+      "Rehab budget included in burden assessment: $18,000"
+    ],
+    "score": 95.5,
+    "stressed_value": 2522.32,
+    "subject": "lease expirations",
+    "variance": 229.30000000000018,
+    "variance_pct": 0.0999991277878083
+  },
+  "OperatingKpiModel": {
+    "base_value": 2293.02,
+    "confidence": 0.7,
+    "lens": "asset-management monitoring",
+    "notes": [
+      "Subject: operating KPIs",
+      "Analytical lens: asset-management monitoring",
+      "Stress factor: 1.10x",
+      "DSCR context: 1.48x",
+      "NOI context: $25,497",
+      "Rehab budget included in burden assessment: $18,000"
+    ],
+    "score": 95.5,
+    "stressed_value": 2522.32,
+    "subject": "operating KPIs",
+    "variance": 229.30000000000018,
+    "variance_pct": 0.0999991277878083
+  },
+  "PropertyTaxAppealModel": {
+    "base_value": 2293.02,
+    "confidence": 0.7,
+    "lens": "assessment mitigation",
+    "notes": [
+      "Subject: tax appeal",
+      "Analytical lens: assessment mitigation",
+      "Stress factor: 1.10x",
+      "DSCR context: 1.48x",
+      "NOI context: $25,497",
+      "Rehab budget included in burden assessment: $18,000"
+    ],
+    "score": 95.5,
+    "stressed_value": 2522.32,
+    "subject": "tax appeal",
+    "variance": 229.30000000000018,
+    "variance_pct": 0.0999991277878083
+  },
+  "RefinanceProceedsModel": {
+    "base_value": 2293.02,
+    "confidence": 0.7,
+    "lens": "takeout financing",
+    "notes": [
+      "Subject: refinance proceeds",
+      "Analytical lens: takeout financing",
+      "Stress factor: 1.10x",
+      "DSCR context: 1.48x",
+      "NOI context: $25,497",
+      "Rehab budget included in burden assessment: $18,000"
+    ],
+    "score": 95.5,
+    "stressed_value": 2522.32,
+    "subject": "refinance proceeds",
+    "variance": 229.30000000000018,
+    "variance_pct": 0.0999991277878083
+  },
+  "RentRollModel": {
+    "base_value": 2293.02,
+    "confidence": 0.7,
+    "lens": "income durability",
+    "notes": [
+      "Subject: rent roll",
+      "Analytical lens: income durability",
+      "Stress factor: 1.10x",
+      "DSCR context: 1.48x",
+      "NOI context: $25,497",
+      "Rehab budget included in burden assessment: $18,000"
+    ],
+    "score": 95.5,
+    "stressed_value": 2522.32,
+    "subject": "rent roll",
+    "variance": 229.30000000000018,
+    "variance_pct": 0.0999991277878083
+  },
+  "RepairReserveModel": {
+    "base_value": 2293.02,
+    "confidence": 0.7,
+    "lens": "maintenance normalization",
+    "notes": [
+      "Subject: repair reserves",
+      "Analytical lens: maintenance normalization",
+      "Stress factor: 1.10x",
+      "DSCR context: 1.48x",
+      "NOI context: $25,497",
+      "Rehab budget included in burden assessment: $18,000"
+    ],
+    "score": 95.5,
+    "stressed_value": 2522.32,
+    "subject": "repair reserves",
+    "variance": 229.30000000000018,
+    "variance_pct": 0.0999991277878083
+  },
+  "ReserveSizingModel": {
+    "base_value": 2293.02,
+    "confidence": 0.7,
+    "lens": "liquidity buffer",
+    "notes": [
+      "Subject: reserve sizing",
+      "Analytical lens: liquidity buffer",
+      "Stress factor: 1.10x",
+      "DSCR context: 1.48x",
+      "NOI context: $25,497",
+      "Rehab budget included in burden assessment: $18,000"
+    ],
+    "score": 95.5,
+    "stressed_value": 2522.32,
+    "subject": "reserve sizing",
+    "variance": 229.30000000000018,
+    "variance_pct": 0.0999991277878083
+  },
+  "SaleCostModel": {
+    "base_value": 2293.02,
+    "confidence": 0.7,
+    "lens": "exit leakage",
+    "notes": [
+      "Subject: sale costs",
+      "Analytical lens: exit leakage",
+      "Stress factor: 1.10x",
+      "DSCR context: 1.48x",
+      "NOI context: $25,497",
+      "Rehab budget included in burden assessment: $18,000"
+    ],
+    "score": 95.5,
+    "stressed_value": 2522.32,
+    "subject": "sale costs",
+    "variance": 229.30000000000018,
+    "variance_pct": 0.0999991277878083
+  },
+  "ScenarioNarrativeModel": {
+    "base_value": 2293.02,
+    "confidence": 0.7,
+    "lens": "decision framing",
+    "notes": [
+      "Subject: scenario narrative",
+      "Analytical lens: decision framing",
+      "Stress factor: 1.10x",
+      "DSCR context: 1.48x",
+      "NOI context: $25,497",
+      "Rehab budget included in burden assessment: $18,000"
+    ],
+    "score": 95.5,
+    "stressed_value": 2522.32,
+    "subject": "scenario narrative",
+    "variance": 229.30000000000018,
+    "variance_pct": 0.0999991277878083
+  },
+  "SensitivityCubeModel": {
+    "base_value": 2293.02,
+    "confidence": 0.7,
+    "lens": "multi-variable stress",
+    "notes": [
+      "Subject: sensitivity cube",
+      "Analytical lens: multi-variable stress",
+      "Stress factor: 1.10x",
+      "DSCR context: 1.48x",
+      "NOI context: $25,497",
+      "Rehab budget included in burden assessment: $18,000"
+    ],
+    "score": 95.5,
+    "stressed_value": 2522.32,
+    "subject": "sensitivity cube",
+    "variance": 229.30000000000018,
+    "variance_pct": 0.0999991277878083
+  },
+  "TaxReassessmentModel": {
+    "base_value": 2293.02,
+    "confidence": 0.7,
+    "lens": "post-sale tax reset",
+    "notes": [
+      "Subject: tax reassessment",
+      "Analytical lens: post-sale tax reset",
+      "Stress factor: 1.10x",
+      "DSCR context: 1.48x",
+      "NOI context: $25,497",
+      "Rehab budget included in burden assessment: $18,000"
+    ],
+    "score": 95.5,
+    "stressed_value": 2522.32,
+    "subject": "tax reassessment",
+    "variance": 229.30000000000018,
+    "variance_pct": 0.0999991277878083
+  },
+  "TenantImprovementModel": {
+    "base_value": 2293.02,
+    "confidence": 0.7,
+    "lens": "lease-up cost",
+    "notes": [
+      "Subject: tenant improvements",
+      "Analytical lens: lease-up cost",
+      "Stress factor: 1.10x",
+      "DSCR context: 1.48x",
+      "NOI context: $25,497",
+      "Rehab budget included in burden assessment: $18,000"
+    ],
+    "score": 95.5,
+    "stressed_value": 2522.32,
+    "subject": "tenant improvements",
+    "variance": 229.30000000000018,
+    "variance_pct": 0.0999991277878083
+  },
+  "UnitTurnModel": {
+    "base_value": 2293.02,
+    "confidence": 0.7,
+    "lens": "turn cost and downtime",
+    "notes": [
+      "Subject: unit turns",
+      "Analytical lens: turn cost and downtime",
+      "Stress factor: 1.10x",
+      "DSCR context: 1.48x",
+      "NOI context: $25,497",
+      "Rehab budget included in burden assessment: $18,000"
+    ],
+    "score": 95.5,
+    "stressed_value": 2522.32,
+    "subject": "unit turns",
+    "variance": 229.30000000000018,
+    "variance_pct": 0.0999991277878083
+  },
+  "UtilityReimbursementModel": {
+    "base_value": 2293.02,
+    "confidence": 0.7,
+    "lens": "expense leakage",
+    "notes": [
+      "Subject: utility reimbursements",
+      "Analytical lens: expense leakage",
+      "Stress factor: 1.10x",
+      "DSCR context: 1.48x",
+      "NOI context: $25,497",
+      "Rehab budget included in burden assessment: $18,000"
+    ],
+    "score": 95.5,
+    "stressed_value": 2522.32,
+    "subject": "utility reimbursements",
+    "variance": 229.30000000000018,
+    "variance_pct": 0.0999991277878083
+  },
+  "ValuationReconciliationModel": {
+    "base_value": 2293.02,
+    "confidence": 0.7,
+    "lens": "income/comps/cost",
+    "notes": [
+      "Subject: valuation reconciliation",
+      "Analytical lens: income/comps/cost",
+      "Stress factor: 1.10x",
+      "DSCR context: 1.48x",
+      "NOI context: $25,497",
+      "Rehab budget included in burden assessment: $18,000"
+    ],
+    "score": 95.5,
+    "stressed_value": 2522.32,
+    "subject": "valuation reconciliation",
+    "variance": 229.30000000000018,
+    "variance_pct": 0.0999991277878083
+  },
+  "WaterfallModel": {
+    "base_value": 2293.02,
+    "confidence": 0.7,
+    "lens": "distribution priority",
+    "notes": [
+      "Subject: equity waterfall",
+      "Analytical lens: distribution priority",
+      "Stress factor: 1.10x",
+      "DSCR context: 1.48x",
+      "NOI context: $25,497",
+      "Rehab budget included in burden assessment: $18,000"
+    ],
+    "score": 95.5,
+    "stressed_value": 2522.32,
+    "subject": "equity waterfall",
+    "variance": 229.30000000000018,
+    "variance_pct": 0.0999991277878083
+  },
+  "WorkingCapitalModel": {
+    "base_value": 2293.02,
+    "confidence": 0.7,
+    "lens": "escrows and timing",
+    "notes": [
+      "Subject: working capital",
+      "Analytical lens: escrows and timing",
+      "Stress factor: 1.10x",
+      "DSCR context: 1.48x",
+      "NOI context: $25,497",
+      "Rehab budget included in burden assessment: $18,000"
+    ],
+    "score": 95.5,
+    "stressed_value": 2522.32,
+    "subject": "working capital",
+    "variance": 229.30000000000018,
+    "variance_pct": 0.0999991277878083
+  }
+}
