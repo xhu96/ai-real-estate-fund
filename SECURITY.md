@@ -8,19 +8,19 @@ The `main` branch and the latest tagged release are supported for security fixes
 
 Open a private security advisory on GitHub or contact the repository owner directly. Do not disclose exploitable details in public issues.
 
-## Security posture in v6
+## Security posture
 
 The repository includes:
 
-- scoped API-key authentication
+- scoped API-key authentication, fail-closed in deployed environments (local/test is open for demo; `staging`/`production` require a valid key via `REQUIRE_API_KEY=true` and `API_KEY_HASHES`)
+- request validation (malformed payloads return 422, not 500) and a non-leaking error handler
 - security headers
 - request size limits
-- in-memory rate limiting
+- in-memory rate limiting (keyed on client IP)
 - PII and secret redaction helpers
 - audit logging with hash-chain verification
 - production-readiness checks
-- Docker non-root runtime
-- Kubernetes manifests with restricted security context examples
+- Docker non-root runtime (`USER app`)
 - backup/restore and incident-response runbooks
 
 ## Known boundaries

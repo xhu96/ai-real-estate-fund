@@ -5,6 +5,7 @@ from typing import Iterable
 
 from ..finance import clamp
 from ..models import AgentFinding, Recommendation
+from ..scenarios import recommendation_from_score
 from .models import GateSeverity, PolicyResult, ScoreFactor, Scorecard
 
 
@@ -44,16 +45,6 @@ def weighted_average_scores(items: Iterable[tuple[float, float]]) -> float:
 
 def weighted_agent_score(findings: Iterable[AgentFinding]) -> float:
     return weighted_average_scores((finding.score, finding.weight) for finding in findings)
-
-
-def recommendation_from_score(score: float) -> Recommendation:
-    if score >= 78:
-        return Recommendation.BUY
-    if score >= 66:
-        return Recommendation.NEGOTIATE
-    if score >= 52:
-        return Recommendation.WATCHLIST
-    return Recommendation.PASS
 
 
 def recommendation_with_policy(score: float, policy_results: list[PolicyResult]) -> Recommendation:

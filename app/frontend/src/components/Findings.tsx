@@ -11,9 +11,9 @@ export function Findings({ findings }: { findings: AgentFinding[] }) {
   const weakest = sorted.slice(0, 8);
   const rest = sorted.slice(8);
   return (
-    <section className="panel">
-      <div className="panel-head">
-        <h2>Committee findings</h2>
+    <section className="panel reveal">
+      <div className="panel-h">
+        <div className="t"><h2>Committee findings</h2></div>
         <span className="hint">{findings.length} agents · weakest first</span>
       </div>
       <div className="panel-body flush">

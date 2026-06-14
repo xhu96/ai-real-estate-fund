@@ -76,7 +76,7 @@ def build_allocation_plan(prop: PropertyInput, metrics: UnderwritingMetrics, sco
         quality_modifier = min(1.0, max(0.35, data_quality / 90.0))
         target = round(base * risk_modifier * quality_modifier, 4)
     maximum = round(min(0.25, target * 1.5 + 0.015), 4) if target else 0.0
-    equity = metrics.cash_invested * target / max(target, 0.001) if target else 0.0
+    equity = metrics.cash_invested if target else 0.0
     reserve = max(0.0, metrics.operating_expenses * 0.10 + prop.rehab_budget * 0.10) if target else 0.0
     reasons = [
         f"Committee score {score:.1f}/100",

@@ -18,7 +18,7 @@ In CI, use:
 APP_ENV=ci python -m ai_real_estate_fund readiness --strict
 ```
 
-The production gate checks configuration, required docs, Docker files, Kubernetes manifests, test coverage surface, importability, writable data paths, health checks, security flags, CORS, API keys, payload limits, audit storage, and package metadata placeholders.
+The production gate checks configuration, required docs, Docker files (`Dockerfile`, `docker-compose.yml`, `compose.production.yml`), CI workflows, deployment scripts, test coverage surface, importability, writable data paths, health checks, security flags, CORS, API keys, payload limits, audit storage, and package metadata placeholders.
 
 ## Minimum production controls
 
@@ -59,7 +59,7 @@ A release should not be promoted unless all of the following pass:
 
 ```bash
 python -m compileall -q src app/backend tests
-python -m unittest discover -s tests
+python -m pytest -q
 python scripts/smoke_test.py
 APP_ENV=ci python -m ai_real_estate_fund readiness --strict
 python scripts/release_manifest.py

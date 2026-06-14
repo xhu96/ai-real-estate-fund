@@ -8,7 +8,8 @@ class ToolsV4Tests(unittest.TestCase):
         self.assertTrue(screen_property_payload({"purchase_price": 0, "market": ""}))
 
     def test_watchlist(self):
-        watchlist = Watchlist(); watchlist.add("A", "M", "reason", 100)
+        watchlist = Watchlist()
+        watchlist.add("A", "M", "reason", 100)
         self.assertEqual(len(watchlist.to_dict()), 1)
 
     def test_haversine(self):

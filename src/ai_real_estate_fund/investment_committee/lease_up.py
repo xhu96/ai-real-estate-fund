@@ -13,7 +13,10 @@ class LeaseUpAgent(CommitteeAgent):
         rent_growth_score = score_range(data.market_snapshot.rent_growth_yoy, -0.02, 0.06)
         score = vacancy_score * 0.65 + rent_growth_score * 0.35
         positives, concerns = [], []
-        if vacancy_delta >= 0: positives.append("Vacancy assumption is at or above the fixture market vacancy rate.")
-        else: concerns.append(f"Vacancy assumption is {pct(abs(vacancy_delta))} below fixture market vacancy.")
-        if data.market_snapshot.rent_growth_yoy < 0: concerns.append("Negative rent growth would make lease-up materially harder.")
+        if vacancy_delta >= 0:
+            positives.append("Vacancy assumption is at or above the fixture market vacancy rate.")
+        else:
+            concerns.append(f"Vacancy assumption is {pct(abs(vacancy_delta))} below fixture market vacancy.")
+        if data.market_snapshot.rent_growth_yoy < 0:
+            concerns.append("Negative rent growth would make lease-up materially harder.")
         return self.finding(score=score, confidence=0.64, thesis=f"Lease-up risk uses modeled vacancy {pct(prop.vacancy_rate)} and market rent growth {pct(data.market_snapshot.rent_growth_yoy)}.", positives=positives, concerns=concerns, evidence=[self.assumption("vacancy_rate", round(prop.vacancy_rate,4)), self.market_evidence("market_vacancy_rate", round(data.market_snapshot.vacancy_rate,4))], actions=["Collect active-listing days-on-market and concession evidence for direct competitors."])

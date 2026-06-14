@@ -12,6 +12,9 @@ build/
 reports/*.md
 !reports/.gitkeep
 data/*.db
+app/data/*.db
+*.db
+*.zip
 node_modules/
 app/frontend/dist/
 .DS_Store

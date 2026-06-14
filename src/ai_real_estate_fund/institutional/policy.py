@@ -4,10 +4,16 @@ from ..models import DiligenceDataBundle, PropertyInput, UnderwritingMetrics
 from .models import GateSeverity, InvestmentPolicy, PolicyLimit, PolicyResult
 from .scoring import safe_divide
 
+# A no-debt deal has metrics.dscr == inf. Policy gate values are rendered into
+# gate messages (f"{value:.4g}") and JSON (where non-finite floats normalize to
+# None), so we substitute a finite display value here. It clears every minimum
+# DSCR gate while keeping the policy payload strict-JSON serializable.
+NO_DEBT_DSCR_DISPLAY = 9.99
+
 
 def metric_value(metric: str, prop: PropertyInput, metrics: UnderwritingMetrics, data: DiligenceDataBundle, committee_score: float) -> float:
     if metric == "dscr":
-        return metrics.dscr if metrics.dscr != float("inf") else 9.99
+        return metrics.dscr if metrics.dscr != float("inf") else NO_DEBT_DSCR_DISPLAY
     if metric == "debt_yield":
         return safe_divide(metrics.noi, prop.loan_amount)
     if metric == "loan_to_cost":

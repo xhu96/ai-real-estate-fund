@@ -6,10 +6,10 @@ from ai_real_estate_fund.data_loader import load_property
 from ai_real_estate_fund.data_sources import LocalDataProvider
 from ai_real_estate_fund.finance import underwrite_property
 from ai_real_estate_fund.institutional.proforma import build_operating_plan, cumulative_cash_flow, minimum_dscr
-from ai_real_estate_fund.institutional.underwriting.rent_roll_model import RentRollModel
-from ai_real_estate_fund.institutional.underwriting.tax_reassessment_model import TaxReassessmentModel
-from ai_real_estate_fund.institutional.research.affordability_signal import AffordabilitySignal
-from ai_real_estate_fund.institutional.research.liquidity_signal import LiquiditySignal
+from ai_real_estate_fund.institutional.underwriting import RentRollModel
+from ai_real_estate_fund.institutional.underwriting import TaxReassessmentModel
+from ai_real_estate_fund.institutional.research import AffordabilitySignal
+from ai_real_estate_fund.institutional.research import LiquiditySignal
 
 
 class UnderwritingResearchV5Tests(unittest.TestCase):

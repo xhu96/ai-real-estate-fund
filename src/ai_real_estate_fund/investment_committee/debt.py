@@ -9,7 +9,8 @@ class DebtCapitalMarketsAgent(CommitteeAgent):
 
     def analyze(self, prop, metrics, data, prior_findings):
         ltc_score = score_range(metrics.loan_to_cost, 0.85, 0.60, invert=True)
-        dscr_score = score_range(metrics.dscr if metrics.dscr != float("inf") else 2.0, 1.00, 1.65)
+        # A no-debt deal has metrics.dscr == inf; score_range clamps it to the band top (100).
+        dscr_score = score_range(metrics.dscr, 1.00, 1.65)
         rate_score = score_range(prop.annual_interest_rate, 0.095, 0.045, invert=True)
         score = ltc_score * 0.30 + dscr_score * 0.50 + rate_score * 0.20
         positives, concerns = [], []

@@ -2,9 +2,9 @@ import { VerdictBadge } from './Badge';
 
 export function ScenarioTable({ scenarios }: { scenarios: Array<Record<string, unknown>> }) {
   return (
-    <section className="panel">
-      <div className="panel-head">
-        <h2>Scenarios</h2>
+    <section className="panel reveal">
+      <div className="panel-h">
+        <div className="t"><h2>Scenarios</h2></div>
         <span className="hint">Same deal under stressed assumptions</span>
       </div>
       <div className="panel-body flush">

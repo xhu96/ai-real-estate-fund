@@ -1,10 +1,11 @@
 from __future__ import annotations
-from fastapi import APIRouter
+from fastapi import APIRouter, Depends
+from ..dependencies import require_scope
 from ..services.validation_service import ValidationService
 router = APIRouter(prefix="/validation", tags=["validation"])
 @router.post("/calibration")
-def calibration(payload: dict):
+def calibration(payload: dict, _: dict = Depends(require_scope("analyze"))):
     return ValidationService().calibration(payload.get("scores", []), payload.get("outcomes", []))
 @router.post("/drift")
-def drift(payload: dict):
+def drift(payload: dict, _: dict = Depends(require_scope("analyze"))):
     return ValidationService().drift(payload.get("expected", []), payload.get("actual", []))

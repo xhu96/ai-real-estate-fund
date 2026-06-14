@@ -6,12 +6,21 @@ from .finance import clamp, underwrite_property
 from .models import PropertyInput, Recommendation, ScenarioResult
 
 
+# Canonical recommendation thresholds — the single source of truth for BOTH the
+# screening and institutional committees. Previously the institutional engine used
+# 66/52 while screening used 68/55, so the same score could yield different verdicts
+# depending on which committee ran. Unified on the institutional (flagship) values.
+BUY_THRESHOLD = 78.0
+NEGOTIATE_THRESHOLD = 66.0
+WATCHLIST_THRESHOLD = 52.0
+
+
 def recommendation_from_score(score: float) -> Recommendation:
-    if score >= 78:
+    if score >= BUY_THRESHOLD:
         return Recommendation.BUY
-    if score >= 68:
+    if score >= NEGOTIATE_THRESHOLD:
         return Recommendation.NEGOTIATE
-    if score >= 55:
+    if score >= WATCHLIST_THRESHOLD:
         return Recommendation.WATCHLIST
     return Recommendation.PASS
 

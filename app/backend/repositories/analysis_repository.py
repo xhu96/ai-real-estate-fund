@@ -18,3 +18,9 @@ class AnalysisRepository:
         with get_connection() as conn:
             rows = conn.execute("SELECT payload_json FROM analysis_runs ORDER BY id DESC LIMIT ?", (limit,)).fetchall()
         return [json.loads(row["payload_json"]) for row in rows]
+
+    def get(self, run_id: str) -> dict | None:
+        migrate()
+        with get_connection() as conn:
+            row = conn.execute("SELECT payload_json FROM analysis_runs WHERE run_id = ?", (run_id,)).fetchone()
+        return json.loads(row["payload_json"]) if row else None

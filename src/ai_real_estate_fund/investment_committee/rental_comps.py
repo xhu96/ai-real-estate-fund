@@ -21,7 +21,7 @@ class RentalCompsAgent(CommitteeAgent):
         elif rent_ratio > 1.03:
             concerns.append(f"Modeled rent is {pct(rent_ratio - 1)} above comp median and needs verification.")
         else:
-            positives.append(f"Modeled rent is below comp median, leaving potential upside if condition supports it.")
+            positives.append("Modeled rent is below comp median, leaving potential upside if condition supports it.")
         if prop.vacancy_rate <= data.market_snapshot.vacancy_rate + 0.015:
             positives.append("Vacancy assumption is broadly aligned with market snapshot.")
         else:

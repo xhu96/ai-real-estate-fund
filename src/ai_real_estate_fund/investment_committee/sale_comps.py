@@ -1,5 +1,5 @@
 from __future__ import annotations
-from .base import CommitteeAgent, money, safe_median, score_range
+from .base import CommitteeAgent, money, safe_median
 
 class SaleCompsAgent(CommitteeAgent):
     name = "Sale Comps Agent"

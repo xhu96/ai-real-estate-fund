@@ -17,5 +17,6 @@ class EnvironmentalAgent(CommitteeAgent):
         if prop.year_built and prop.year_built < 1978:
             score -= 8
             concerns.append("Pre-1978 property may require lead-based paint disclosure and risk review.")
-        if not concerns: positives.append("No environmental keywords were found in the provided notes.")
+        if not concerns:
+            positives.append("No environmental keywords were found in the provided notes.")
         return self.finding(score=score, confidence=0.42, thesis="Environmental screen is a keyword and age-based preliminary check only.", positives=positives, concerns=concerns, evidence=[self.assumption("year_built", prop.year_built), self.assumption("notes", prop.notes[:160])], actions=["Order appropriate environmental, flood, and hazardous-material diligence for the asset type and location."])

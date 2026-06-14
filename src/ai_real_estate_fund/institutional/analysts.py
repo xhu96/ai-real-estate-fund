@@ -1,5 +1,3 @@
-from __future__ import annotations
-
 """LLM analyst personas.
 
 Four analysts debate the committee's deterministic output, the way named
@@ -9,6 +7,8 @@ bottom workstreams) and returns a structured opinion. The deterministic scores
 are never altered by the models — the LLM layer argues about the deal, it does
 not grade it.
 """
+
+from __future__ import annotations
 
 from dataclasses import dataclass, field
 from datetime import datetime, timezone

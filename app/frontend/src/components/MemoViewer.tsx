@@ -1,27 +1,30 @@
 import type { CommitteeDecision } from '../types';
 import { VerdictBadge } from './Badge';
 
+const pct = (v: unknown) => (v == null ? 'n/a' : `${(Number(v) * 100).toFixed(1)}%`);
+
 export function MemoViewer({ decision }: { decision: CommitteeDecision }) {
   const metrics = decision.metrics ?? {};
-  const pct = (v: unknown) => (v == null ? 'n/a' : `${(Number(v) * 100).toFixed(1)}%`);
+  const p = decision.property;
+  const meta = [p.market].filter(Boolean).join(' · ');
   return (
-    <section className="verdict" aria-label="Committee verdict">
-      <VerdictBadge value={String(decision.recommendation)} large />
-      <div className="figure">
-        <span className="label">Overall score</span>
-        <span className="value">{decision.overall_score.toFixed(1)}<span className="unit">/100</span></span>
+    <section className={`verdict reveal ${String(decision.recommendation).toLowerCase()}`} aria-label="Committee verdict">
+      <div className="score-disc">
+        <div className="cap">Overall</div>
+        <div className="big">{decision.overall_score.toFixed(1)}</div>
+        <div className="cap">of 100</div>
       </div>
-      <div className="figure">
-        <span className="label">Cap rate</span>
-        <span className="value">{pct(metrics.cap_rate)}</span>
-      </div>
-      <div className="figure">
-        <span className="label">DSCR</span>
-        <span className="value">{metrics.dscr == null ? 'n/a' : `${Number(metrics.dscr).toFixed(2)}x`}</span>
-      </div>
-      <div className="figure">
-        <span className="label">Suggested allocation</span>
-        <span className="value">{(decision.suggested_allocation_pct * 100).toFixed(1)}<span className="unit">%</span></span>
+      <div>
+        <div className="head">
+          <VerdictBadge value={String(decision.recommendation)} large />
+          <h1>{p.name}</h1>
+          {meta && <span className="addr">· {meta}</span>}
+        </div>
+        <div className="figs">
+          <div className="fig"><div className="l">Going-in cap</div><div className="v num gold">{pct(metrics.cap_rate)}</div></div>
+          <div className="fig"><div className="l">DSCR</div><div className="v num">{metrics.dscr == null ? 'n/a' : `${Number(metrics.dscr).toFixed(2)}x`}</div></div>
+          <div className="fig"><div className="l">Suggested allocation</div><div className="v num">{(decision.suggested_allocation_pct * 100).toFixed(1)}<small>%</small></div></div>
+        </div>
       </div>
     </section>
   );

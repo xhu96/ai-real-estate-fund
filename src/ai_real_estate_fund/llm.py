@@ -1,5 +1,3 @@
-from __future__ import annotations
-
 """LLM client layer.
 
 The deterministic committee never requires a model. When LLM commentary is
@@ -22,6 +20,8 @@ Every client exposes ``build_request`` separately from ``complete`` so request
 shaping is unit-testable without network access.
 """
 
+from __future__ import annotations
+
 import json
 import os
 import urllib.error
@@ -35,7 +35,9 @@ ANTHROPIC_BASE_URL = "https://api.anthropic.com/v1"
 GEMINI_BASE_URL = "https://generativelanguage.googleapis.com/v1beta"
 
 DEFAULT_MODELS = {
-    "nvidia": "z-ai/glm-5.1",
+    # Fast + reliable default (verified ~1s). Larger models like
+    # meta/llama-3.3-70b-instruct give stronger analysis but cold-start slowly.
+    "nvidia": "meta/llama-3.1-8b-instruct",
     "openai": "gpt-4o-mini",
     "anthropic": "claude-sonnet-4-6",
     "gemini": "gemini-2.5-flash",
@@ -113,7 +115,14 @@ def _post_json(url: str, headers: dict[str, str], body: dict[str, Any], timeout:
         detail = exc.read().decode("utf-8", errors="replace")[:300]
         raise RuntimeError(f"LLM request failed ({exc.code}): {detail}") from exc
     except (urllib.error.URLError, TimeoutError) as exc:
-        raise RuntimeError(f"LLM endpoint unreachable: {exc}") from exc
+        reason = getattr(exc, "reason", exc)
+        if isinstance(exc, TimeoutError) or "timed out" in str(reason).lower():
+            raise RuntimeError(
+                f"LLM request timed out after {timeout}s. The model is likely cold-starting "
+                "(a model's first call can take a minute) or is slow/unavailable on the provider. "
+                "Try again in a moment, or pick a faster model (e.g. meta/llama-3.1-8b-instruct)."
+            ) from exc
+        raise RuntimeError(f"LLM endpoint unreachable: {reason}") from exc
 
 
 @dataclass(slots=True)
@@ -297,3 +306,91 @@ def client_from_env(model: str | None = None, provider: str | None = None) -> LL
         return live_client_from_env(model=model, provider=provider)
     except RuntimeError:
         return OfflineAnalystClient()
+
+
+# ---------------------------------------------------------------------------
+# GUI overrides: build a client / list models from explicit options, falling
+# back to the server .env when a field is omitted. Used by the /llm API routes.
+# ---------------------------------------------------------------------------
+
+def _get_json(url: str, headers: dict[str, str], timeout: int = 30) -> dict[str, Any]:
+    request = urllib.request.Request(url, headers={"Accept": "application/json", **headers}, method="GET")
+    try:
+        with urllib.request.urlopen(request, timeout=timeout) as response:
+            return json.loads(response.read().decode("utf-8"))
+    except urllib.error.HTTPError as exc:
+        detail = exc.read().decode("utf-8", errors="replace")[:300]
+        raise RuntimeError(f"Request failed ({exc.code}): {detail}") from exc
+    except (urllib.error.URLError, TimeoutError) as exc:
+        raise RuntimeError(f"Endpoint unreachable: {exc}") from exc
+
+
+def _resolve_base(provider: str, base_url: str | None) -> str:
+    if base_url:
+        return base_url
+    if provider == "openai":
+        return OPENAI_BASE_URL
+    if provider == "anthropic":
+        return ANTHROPIC_BASE_URL
+    if provider == "gemini":
+        return GEMINI_BASE_URL
+    return os.getenv("LLM_BASE_URL", NVIDIA_BASE_URL)
+
+
+def client_from_options(provider: str | None = None, api_key: str | None = None,
+                        model: str | None = None, base_url: str | None = None) -> LLMClient:
+    """Build a live client from explicit GUI overrides, falling back to env per field."""
+    load_dotenv_if_present()
+    chosen = (provider or detect_provider() or "nvidia").lower()
+    key = api_key or (_key_for(chosen) if chosen in PROVIDER_KEY_ENVS else None) \
+        or os.getenv("NVIDIA_API_KEY") or os.getenv("OPENAI_API_KEY")
+    if not key:
+        raise RuntimeError(f"No API key for provider '{chosen}'. Add one in Settings or set its env var in .env.")
+    chosen_model = model or os.getenv("LLM_MODEL") or DEFAULT_MODELS.get(chosen, DEFAULT_MODELS["nvidia"])
+    base = _resolve_base(chosen, base_url)
+    if chosen == "anthropic":
+        return AnthropicClient(api_key=key, model=chosen_model, base_url=base)
+    if chosen == "gemini":
+        return GeminiClient(api_key=key, model=chosen_model, base_url=base)
+    return OpenAICompatibleClient(api_key=key, model=chosen_model, base_url=base)
+
+
+def list_models(provider: str | None = None, api_key: str | None = None,
+                base_url: str | None = None, timeout: int = 30) -> list[str]:
+    """List available model ids from the provider catalog (uses override key or env key)."""
+    load_dotenv_if_present()
+    chosen = (provider or detect_provider() or "nvidia").lower()
+    key = api_key or (_key_for(chosen) if chosen in PROVIDER_KEY_ENVS else None) \
+        or os.getenv("NVIDIA_API_KEY") or os.getenv("OPENAI_API_KEY")
+    base = _resolve_base(chosen, base_url).rstrip("/")
+    if chosen == "gemini":
+        if not key:
+            raise RuntimeError("No Gemini API key configured.")
+        data = _get_json(f"{base}/models?key={key}", {}, timeout)
+        names = [str(m.get("name", "")).split("/")[-1] for m in data.get("models", [])
+                 if "generateContent" in (m.get("supportedGenerationMethods") or [])]
+        return sorted(n for n in names if n)
+    if chosen == "anthropic":
+        if not key:
+            raise RuntimeError("No Anthropic API key configured.")
+        data = _get_json(f"{base}/models", {"x-api-key": key, "anthropic-version": "2023-06-01"}, timeout)
+        return sorted(str(m.get("id", "")) for m in data.get("data", []) if m.get("id"))
+    # nvidia / openai / any OpenAI-compatible server
+    if not key:
+        raise RuntimeError("No API key configured for model listing.")
+    data = _get_json(f"{base}/models", {"Authorization": f"Bearer {key}"}, timeout)
+    return sorted(str(m.get("id", "")) for m in data.get("data", []) if m.get("id"))
+
+
+def provider_status(provider: str | None = None) -> dict[str, Any]:
+    """Report the resolved provider, whether a key is present, base URL and default model. No secrets."""
+    load_dotenv_if_present()
+    chosen = (provider or detect_provider() or "nvidia").lower()
+    key_present = bool(_key_for(chosen)) if chosen in PROVIDER_KEY_ENVS else False
+    return {
+        "provider": chosen,
+        "key_present": key_present,
+        "base_url": _resolve_base(chosen, None),
+        "model": os.getenv("LLM_MODEL") or DEFAULT_MODELS.get(chosen, ""),
+        "providers": list(PROVIDERS),
+    }

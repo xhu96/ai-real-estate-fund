@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 import os
-from dataclasses import asdict, dataclass, field
+from dataclasses import asdict, dataclass
 from pathlib import Path
 from typing import Any
 
@@ -127,6 +127,18 @@ class ProductionSettings:
     @property
     def is_ci(self) -> bool:
         return self.environment in {"ci", "test"} or bool(os.getenv("CI"))
+
+    @property
+    def allows_demo_mode(self) -> bool:
+        # Open, unauthenticated demo access is acceptable ONLY in non-deployed
+        # local/test environments, and only when an operator has not explicitly
+        # required API keys. Any deployed environment (staging, production) — or
+        # an unrecognized APP_ENV — fails closed and must present a valid key.
+        return (
+            self.enable_demo_mode
+            and not self.require_api_key
+            and self.environment in {"development", "dev", "local", "test", "ci"}
+        )
 
     def validate(self) -> list[ConfigIssue]:
         issues: list[ConfigIssue] = []

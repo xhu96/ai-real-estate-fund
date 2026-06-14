@@ -13,7 +13,8 @@ class AcquisitionPricingAgent(CommitteeAgent):
         margin = (max_offer - prop.purchase_price) / prop.purchase_price if prop.purchase_price else -1
         cap_score = score_range(metrics.cap_rate, 0.045, 0.095)
         margin_score = score_range(margin, -0.15, 0.20)
-        dscr_score = score_range(metrics.dscr if metrics.dscr != float("inf") else 2.0, 0.95, 1.75)
+        # A no-debt deal has metrics.dscr == inf; score_range clamps it to the band top (100).
+        dscr_score = score_range(metrics.dscr, 0.95, 1.75)
         score = cap_score * 0.45 + margin_score * 0.40 + dscr_score * 0.15
         positives = []
         concerns = []

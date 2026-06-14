@@ -100,7 +100,8 @@ class InstitutionalAgent(ABC):
         return {
             "cap_rate": score_threshold(metrics.cap_rate, 0.065, tolerance=0.50),
             "cash_on_cash": score_threshold(metrics.cash_on_cash_return, 0.07, tolerance=0.75),
-            "dscr": score_threshold(metrics.dscr if metrics.dscr != float("inf") else 2.0, 1.25, tolerance=0.30),
+            # A no-debt deal has metrics.dscr == inf; score_threshold clamps it to the band top (100).
+            "dscr": score_threshold(metrics.dscr, 1.25, tolerance=0.30),
             "ltc": score_range(metrics.loan_to_cost, 0.55, 0.85, invert=True),
             "break_even": score_range(metrics.break_even_occupancy, 0.65, 0.95, invert=True),
             "market_growth": self.blended_score([

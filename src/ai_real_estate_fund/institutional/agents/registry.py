@@ -1,5 +1,3 @@
-from __future__ import annotations
-
 """Institutional committee registry.
 
 Every committee workstream uses the same deterministic, auditable scoring
@@ -8,6 +6,8 @@ code: ``specs.AGENT_SPECS`` declares each workstream's name, category, weight,
 focus components, and report language. Adding a workstream means adding one
 ``AgentSpec`` entry.
 """
+
+from __future__ import annotations
 
 from .base import InstitutionalAgent, WorkstreamAgent
 from .specs import AGENT_SPECS, AgentSpec

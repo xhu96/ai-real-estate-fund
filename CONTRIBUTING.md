@@ -8,7 +8,7 @@ Contributions are welcome. Please keep the project educational, auditable, and d
 python -m venv .venv
 source .venv/bin/activate
 python -m pip install -e ".[dev]"
-make test
+python -m pytest -q
 ```
 
 Optional extras:
@@ -29,7 +29,7 @@ python -m pip install -e ".[api]"
 
 ## Pull request checklist
 
-- [ ] `make test` passes.
+- [ ] `python -m pytest -q` passes.
 - [ ] New agents include evidence and a confidence score.
 - [ ] New data providers include source and timestamp metadata where possible.
 - [ ] User-facing text keeps the educational disclaimer intact.

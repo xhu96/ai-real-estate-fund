@@ -5,7 +5,7 @@ import unittest
 
 from ai_real_estate_fund.committee import run_institutional_committee
 from ai_real_estate_fund.data_loader import load_property
-from ai_real_estate_fund.institutional.analysts import PERSONAS, build_fact_pack, run_llm_analysts
+from ai_real_estate_fund.institutional.analysts import PERSONAS, build_fact_pack
 from ai_real_estate_fund.institutional.memo import render_institutional_memo
 from ai_real_estate_fund.llm import OfflineAnalystClient, safe_json_loads
 

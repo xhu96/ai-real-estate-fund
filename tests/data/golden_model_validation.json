@@ -1,0 +1,222 @@
+{
+  "AgentScoreDriftValidator": {
+    "findings": [
+      "agent score drift did not identify a blocking validation issue."
+    ],
+    "passed": true,
+    "remediation": [
+      "Archive validation result with the committee packet."
+    ],
+    "score": 100.0,
+    "validator": "agent score drift"
+  },
+  "AllocationReasonablenessValidator": {
+    "findings": [
+      "allocation reasonableness did not identify a blocking validation issue."
+    ],
+    "passed": true,
+    "remediation": [
+      "Archive validation result with the committee packet."
+    ],
+    "score": 100.0,
+    "validator": "allocation reasonableness"
+  },
+  "AssumptionStalenessValidator": {
+    "findings": [
+      "assumption staleness did not identify a blocking validation issue."
+    ],
+    "passed": true,
+    "remediation": [
+      "Archive validation result with the committee packet."
+    ],
+    "score": 100.0,
+    "validator": "assumption staleness"
+  },
+  "CalibrationCurveValidator": {
+    "findings": [
+      "calibration curve did not identify a blocking validation issue."
+    ],
+    "passed": true,
+    "remediation": [
+      "Archive validation result with the committee packet."
+    ],
+    "score": 100.0,
+    "validator": "calibration curve"
+  },
+  "CapitalStackConsistencyValidator": {
+    "findings": [
+      "capital-stack consistency did not identify a blocking validation issue."
+    ],
+    "passed": true,
+    "remediation": [
+      "Archive validation result with the committee packet."
+    ],
+    "score": 100.0,
+    "validator": "capital-stack consistency"
+  },
+  "CommitteeDissentValidator": {
+    "findings": [
+      "committee dissent did not identify a blocking validation issue."
+    ],
+    "passed": true,
+    "remediation": [
+      "Archive validation result with the committee packet."
+    ],
+    "score": 100.0,
+    "validator": "committee dissent"
+  },
+  "DataRoomTraceabilityValidator": {
+    "findings": [
+      "data-room traceability did not identify a blocking validation issue."
+    ],
+    "passed": true,
+    "remediation": [
+      "Archive validation result with the committee packet."
+    ],
+    "score": 100.0,
+    "validator": "data-room traceability"
+  },
+  "FormulaReconciliationValidator": {
+    "findings": [
+      "formula reconciliation did not identify a blocking validation issue."
+    ],
+    "passed": true,
+    "remediation": [
+      "Archive validation result with the committee packet."
+    ],
+    "score": 100.0,
+    "validator": "formula reconciliation"
+  },
+  "HardStopEnforcementValidator": {
+    "findings": [
+      "hard-stop enforcement did not identify a blocking validation issue."
+    ],
+    "passed": true,
+    "remediation": [
+      "Archive validation result with the committee packet."
+    ],
+    "score": 100.0,
+    "validator": "hard-stop enforcement"
+  },
+  "MemoConsistencyValidator": {
+    "findings": [
+      "memo consistency did not identify a blocking validation issue."
+    ],
+    "passed": true,
+    "remediation": [
+      "Archive validation result with the committee packet."
+    ],
+    "score": 100.0,
+    "validator": "memo consistency"
+  },
+  "OutcomeBacktestValidator": {
+    "findings": [
+      "outcome backtest did not identify a blocking validation issue."
+    ],
+    "passed": true,
+    "remediation": [
+      "Archive validation result with the committee packet."
+    ],
+    "score": 100.0,
+    "validator": "outcome backtest"
+  },
+  "OverrideAuditValidator": {
+    "findings": [
+      "override audit did not identify a blocking validation issue."
+    ],
+    "passed": true,
+    "remediation": [
+      "Archive validation result with the committee packet."
+    ],
+    "score": 100.0,
+    "validator": "override audit"
+  },
+  "PolicyGateAuditValidator": {
+    "findings": [
+      "policy gate audit did not identify a blocking validation issue."
+    ],
+    "passed": true,
+    "remediation": [
+      "Archive validation result with the committee packet."
+    ],
+    "score": 100.0,
+    "validator": "policy gate audit"
+  },
+  "ProductionReadinessValidator": {
+    "findings": [
+      "production-readiness controls did not identify a blocking validation issue."
+    ],
+    "passed": true,
+    "remediation": [
+      "Archive validation result with the committee packet."
+    ],
+    "score": 100.0,
+    "validator": "production-readiness controls"
+  },
+  "RiskRegisterCoverageValidator": {
+    "findings": [
+      "risk-register coverage did not identify a blocking validation issue."
+    ],
+    "passed": true,
+    "remediation": [
+      "Archive validation result with the committee packet."
+    ],
+    "score": 100.0,
+    "validator": "risk-register coverage"
+  },
+  "ScenarioCoverageValidator": {
+    "findings": [
+      "scenario coverage did not identify a blocking validation issue."
+    ],
+    "passed": true,
+    "remediation": [
+      "Archive validation result with the committee packet."
+    ],
+    "score": 100.0,
+    "validator": "scenario coverage"
+  },
+  "SensitivityDirectionValidator": {
+    "findings": [
+      "sensitivity direction did not identify a blocking validation issue."
+    ],
+    "passed": true,
+    "remediation": [
+      "Archive validation result with the committee packet."
+    ],
+    "score": 100.0,
+    "validator": "sensitivity direction"
+  },
+  "SourceConcentrationValidator": {
+    "findings": [
+      "source concentration did not identify a blocking validation issue."
+    ],
+    "passed": true,
+    "remediation": [
+      "Archive validation result with the committee packet."
+    ],
+    "score": 100.0,
+    "validator": "source concentration"
+  },
+  "StressCoverageValidator": {
+    "findings": [
+      "stress coverage did not identify a blocking validation issue."
+    ],
+    "passed": true,
+    "remediation": [
+      "Archive validation result with the committee packet."
+    ],
+    "score": 100.0,
+    "validator": "stress coverage"
+  },
+  "VersionControlValidator": {
+    "findings": [
+      "version-control evidence did not identify a blocking validation issue."
+    ],
+    "passed": true,
+    "remediation": [
+      "Archive validation result with the committee packet."
+    ],
+    "score": 100.0,
+    "validator": "version-control evidence"
+  }
+}

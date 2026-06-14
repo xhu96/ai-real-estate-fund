@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass, field
 from time import monotonic, sleep
-from typing import Callable, Generic, TypeVar
+from typing import Callable, TypeVar
 
 T = TypeVar("T")
 

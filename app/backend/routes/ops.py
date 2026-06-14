@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from fastapi import APIRouter, Depends, Response
 
-from ai_real_estate_fund.production import ProductionReadinessChecker, ProductionSettings, render_readiness_markdown, run_health_checks
+from ai_real_estate_fund.production import ProductionReadinessChecker, render_readiness_markdown, run_health_checks
 from ai_real_estate_fund.production.audit import SQLiteAuditLog
 from ai_real_estate_fund.production.observability import metrics
 from ..dependencies import require_scope

@@ -13,6 +13,7 @@ def population_stability_index(expected: list[float], actual: list[float], bucke
         left, right = lo + idx * width, lo + (idx + 1) * width
         e = sum(1 for v in expected if left <= v < right) / len(expected)
         a = sum(1 for v in actual if left <= v < right) / len(actual)
-        e = max(e, 0.0001); a = max(a, 0.0001)
+        e = max(e, 0.0001)
+        a = max(a, 0.0001)
         psi += (a - e) * log(a / e)
     return psi

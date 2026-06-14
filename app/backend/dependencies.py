@@ -12,7 +12,12 @@ def get_api_key_store():
 
 def require_scope(required_scope: str):
     def dependency(request: Request, x_api_key: str | None = Header(default=None, alias="X-API-Key")):
-        if not settings.production.require_api_key and settings.production.enable_demo_mode:
+        prod = settings.production
+        # Demo mode is fail-OPEN in local/test environments only. Any deployed
+        # environment (staging, production) or unknown APP_ENV falls through to
+        # key verification. See ProductionSettings.allows_demo_mode.
+        if prod.allows_demo_mode:
+            request.state.actor = "demo"
             return {"name": "demo", "scopes": ["read", "write", "analyze", "export"]}
         result = get_api_key_store().verify(x_api_key, required_scope=required_scope)
         if not result.ok:

@@ -2,7 +2,10 @@ from __future__ import annotations
 
 from ai_real_estate_fund.production.audit import AuditEvent, SQLiteAuditLog
 from ai_real_estate_fund.production.privacy import redact_payload
+from ..logging_config import get_logger
 from ..settings import settings
+
+logger = get_logger("app.backend.audit")
 
 
 def _audit_path() -> str:
@@ -25,6 +28,12 @@ async def audit_requests(request, call_next):
             ))
         except Exception:
             # Audit failure must be observable but should not leak internals to the user.
+            logger.exception(
+                "audit append failed for %s %s",
+                request.method,
+                request.url.path,
+                extra={"request_id": getattr(request.state, "request_id", "")},
+            )
             response.headers["X-Audit-Status"] = "failed"
         else:
             response.headers["X-Audit-Status"] = "recorded"

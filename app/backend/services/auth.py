@@ -1,4 +1,4 @@
 from __future__ import annotations
 
-def require_demo_key(api_key: str | None) -> bool:
-    return api_key in {None, "", "demo"}
+# Intentionally empty: the former ``require_demo_key`` helper was dead code.
+# Authentication is handled by ``app.backend.dependencies.require_scope``.

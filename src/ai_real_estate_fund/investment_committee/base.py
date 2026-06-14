@@ -10,7 +10,6 @@ from ..models import (
     DiligenceDataBundle,
     EvidenceItem,
     PropertyInput,
-    Recommendation,
     UnderwritingMetrics,
 )
 from ..scenarios import recommendation_from_score
