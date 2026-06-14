@@ -54,13 +54,46 @@ def iter_release_files(root: Path, patterns: Iterable[str] = ("*.py", "*.toml", 
     return sorted(paths)
 
 
-def build_release_manifest(root: str | Path, *, project: str = "ai-real-estate-fund", version: str = "0.6.0") -> ReleaseManifest:
+def resolve_version(default: str = "0.0.0") -> str:
+    """Single source of truth for the release version, so the manifest never drifts.
+
+    Prefers the installed package metadata, falls back to parsing pyproject.toml
+    (3.10-safe, no tomllib needed), then a constant. Callers may still pass an
+    explicit version (e.g. derived from a git tag) to override resolution.
+    """
+    try:
+        from importlib.metadata import PackageNotFoundError
+        from importlib.metadata import version as _pkg_version
+
+        try:
+            return _pkg_version("ai-real-estate-fund")
+        except PackageNotFoundError:
+            pass
+    except Exception:  # pragma: no cover - metadata import should not fail
+        pass
+    try:
+        pyproject = Path(__file__).resolve().parents[3] / "pyproject.toml"
+        in_project = False
+        for line in pyproject.read_text(encoding="utf-8").splitlines():
+            stripped = line.strip()
+            if stripped.startswith("[") and stripped.endswith("]"):
+                in_project = stripped == "[project]"
+                continue
+            if in_project and stripped.startswith("version") and "=" in stripped:
+                return stripped.split("=", 1)[1].strip().strip('"').strip("'")
+    except Exception:  # pragma: no cover - fallback only
+        pass
+    return default
+
+
+def build_release_manifest(root: str | Path, *, project: str = "ai-real-estate-fund", version: str | None = None) -> ReleaseManifest:
+    resolved_version = version or resolve_version()
     root_path = Path(root)
     files = [digest_file(path, root_path) for path in iter_release_files(root_path)]
     root_hash_input = "".join(f"{item.path}:{item.sha256}:{item.bytes}\n" for item in files).encode("utf-8")
     return ReleaseManifest(
         project=project,
-        version=version,
+        version=resolved_version,
         generated_at=datetime.now(timezone.utc).isoformat(),
         root_hash=hashlib.sha256(root_hash_input).hexdigest(),
         files=files,

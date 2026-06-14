@@ -1,4 +1,4 @@
-.PHONY: install install-api test compile smoke readiness health audit api demo frontend docker docker-prod release-manifest clean
+.PHONY: install install-api test compile smoke readiness health audit api demo frontend docker docker-prod release-manifest release-zip release clean
 
 install:
 	python -m pip install -e .
@@ -10,7 +10,8 @@ compile:
 	python -m compileall -q src app/backend tests
 
 test: compile
-	python -m unittest discover -s tests
+	python -m pip install -e ".[api,dev]" -q
+	python -m pytest -q
 
 smoke:
 	python scripts/smoke_test.py
@@ -48,6 +49,18 @@ docker-prod:
 
 release-manifest:
 	python scripts/release_manifest.py
+
+release-zip:
+	bash scripts/make_release_zip.sh
+
+# Full local release build: gate, pip artifacts, manifest, and the curated turnkey zip.
+# Then `git tag vX.Y.Z && git push origin vX.Y.Z` to publish via .github/workflows/release.yml.
+release: test
+	python -m build
+	python scripts/release_manifest.py --out dist/release-manifest.json
+	bash scripts/make_release_zip.sh
+	@echo "dist/ now has: curated zip + wheel + sdist + release-manifest.json"
+	@echo "Publish: git tag v$$(grep -m1 -E '^version' pyproject.toml | sed -E 's/.*\"([^\"]+)\".*/\\1/') && git push origin --tags"
 
 clean:
 	find . -type d -name __pycache__ -prune -exec rm -rf {} +
