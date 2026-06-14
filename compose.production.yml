@@ -1,0 +1,36 @@
+services:
+  api:
+    build: .
+    image: ai-real-estate-fund:production
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env.production
+    environment:
+      APP_ENV: production
+      ENABLE_DEMO_MODE: "false"
+      REQUIRE_API_KEY: "true"
+      REQUIRE_TLS: "true"
+      ENABLE_FIXTURE_DATA: "false"
+      DATABASE_URL: sqlite:////app/data/app.db
+      AUDIT_DATABASE_URL: sqlite:////app/data/audit.db
+    volumes:
+      - ai_ref_data:/app/data
+      - ai_ref_reports:/app/reports
+    read_only: true
+    tmpfs:
+      - /tmp
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    healthcheck:
+      test: ["CMD", "python", "-m", "ai_real_estate_fund", "health", "--json"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+volumes:
+  ai_ref_data:
+  ai_ref_reports:

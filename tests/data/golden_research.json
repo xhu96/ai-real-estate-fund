@@ -1,0 +1,352 @@
+{
+  "AbsorptionVelocitySignal": {
+    "confidence": 0.94,
+    "drivers": [
+      "Market rent growth: 3.5%",
+      "Market vacancy: 6.1%",
+      "Rent comps available: 3",
+      "Sale comps available: 3",
+      "Cap rate: 8.9%"
+    ],
+    "interpretation": "strongly supportive",
+    "normalized_score": 84.8,
+    "raw_value": 139.055,
+    "signal_name": "leasing absorption"
+  },
+  "AffordabilitySignal": {
+    "confidence": 0.94,
+    "drivers": [
+      "Market rent growth: 3.5%",
+      "Market vacancy: 6.1%",
+      "Rent comps available: 3",
+      "Sale comps available: 3",
+      "Cap rate: 8.9%"
+    ],
+    "interpretation": "strongly supportive",
+    "normalized_score": 84.8,
+    "raw_value": 139.055,
+    "signal_name": "rent-to-income affordability"
+  },
+  "CapRateSpreadSignal": {
+    "confidence": 0.94,
+    "drivers": [
+      "Market rent growth: 3.5%",
+      "Market vacancy: 6.1%",
+      "Rent comps available: 3",
+      "Sale comps available: 3",
+      "Cap rate: 8.9%"
+    ],
+    "interpretation": "strongly supportive",
+    "normalized_score": 84.8,
+    "raw_value": 139.055,
+    "signal_name": "cap-rate spread to debt"
+  },
+  "ClimateExposureSignal": {
+    "confidence": 0.94,
+    "drivers": [
+      "Market rent growth: 3.5%",
+      "Market vacancy: 6.1%",
+      "Rent comps available: 3",
+      "Sale comps available: 3",
+      "Cap rate: 8.9%"
+    ],
+    "interpretation": "strongly supportive",
+    "normalized_score": 84.8,
+    "raw_value": 139.055,
+    "signal_name": "physical climate exposure"
+  },
+  "ConstructionCostSignal": {
+    "confidence": 0.94,
+    "drivers": [
+      "Market rent growth: 3.5%",
+      "Market vacancy: 6.1%",
+      "Rent comps available: 3",
+      "Sale comps available: 3",
+      "Cap rate: 8.9%"
+    ],
+    "interpretation": "strongly supportive",
+    "normalized_score": 84.8,
+    "raw_value": 139.055,
+    "signal_name": "construction-cost pressure"
+  },
+  "CrimeTrendSignal": {
+    "confidence": 0.94,
+    "drivers": [
+      "Market rent growth: 3.5%",
+      "Market vacancy: 6.1%",
+      "Rent comps available: 3",
+      "Sale comps available: 3",
+      "Cap rate: 8.9%"
+    ],
+    "interpretation": "strongly supportive",
+    "normalized_score": 84.8,
+    "raw_value": 139.055,
+    "signal_name": "safety trend"
+  },
+  "DistressSupplySignal": {
+    "confidence": 0.94,
+    "drivers": [
+      "Market rent growth: 3.5%",
+      "Market vacancy: 6.1%",
+      "Rent comps available: 3",
+      "Sale comps available: 3",
+      "Cap rate: 8.9%"
+    ],
+    "interpretation": "strongly supportive",
+    "normalized_score": 84.8,
+    "raw_value": 139.055,
+    "signal_name": "distressed-sale inventory"
+  },
+  "EmploymentDiversitySignal": {
+    "confidence": 0.94,
+    "drivers": [
+      "Market rent growth: 3.5%",
+      "Market vacancy: 6.1%",
+      "Rent comps available: 3",
+      "Sale comps available: 3",
+      "Cap rate: 8.9%"
+    ],
+    "interpretation": "strongly supportive",
+    "normalized_score": 84.8,
+    "raw_value": 139.055,
+    "signal_name": "employer concentration"
+  },
+  "EvictionTimelineSignal": {
+    "confidence": 0.94,
+    "drivers": [
+      "Market rent growth: 3.5%",
+      "Market vacancy: 6.1%",
+      "Rent comps available: 3",
+      "Sale comps available: 3",
+      "Cap rate: 8.9%"
+    ],
+    "interpretation": "strongly supportive",
+    "normalized_score": 84.8,
+    "raw_value": 139.055,
+    "signal_name": "remedy timeline"
+  },
+  "ExitBidSignal": {
+    "confidence": 0.94,
+    "drivers": [
+      "Market rent growth: 3.5%",
+      "Market vacancy: 6.1%",
+      "Rent comps available: 3",
+      "Sale comps available: 3",
+      "Cap rate: 8.9%"
+    ],
+    "interpretation": "strongly supportive",
+    "normalized_score": 84.8,
+    "raw_value": 139.055,
+    "signal_name": "exit bid support"
+  },
+  "InsuranceAvailabilitySignal": {
+    "confidence": 0.94,
+    "drivers": [
+      "Market rent growth: 3.5%",
+      "Market vacancy: 6.1%",
+      "Rent comps available: 3",
+      "Sale comps available: 3",
+      "Cap rate: 8.9%"
+    ],
+    "interpretation": "strongly supportive",
+    "normalized_score": 84.8,
+    "raw_value": 139.055,
+    "signal_name": "insurance market depth"
+  },
+  "LaborAvailabilitySignal": {
+    "confidence": 0.94,
+    "drivers": [
+      "Market rent growth: 3.5%",
+      "Market vacancy: 6.1%",
+      "Rent comps available: 3",
+      "Sale comps available: 3",
+      "Cap rate: 8.9%"
+    ],
+    "interpretation": "strongly supportive",
+    "normalized_score": 84.8,
+    "raw_value": 139.055,
+    "signal_name": "contractor availability"
+  },
+  "LiquiditySignal": {
+    "confidence": 0.94,
+    "drivers": [
+      "Market rent growth: 3.5%",
+      "Market vacancy: 6.1%",
+      "Rent comps available: 3",
+      "Sale comps available: 3",
+      "Cap rate: 8.9%"
+    ],
+    "interpretation": "strongly supportive",
+    "normalized_score": 84.8,
+    "raw_value": 139.055,
+    "signal_name": "buyer depth"
+  },
+  "MigrationSignal": {
+    "confidence": 0.94,
+    "drivers": [
+      "Market rent growth: 3.5%",
+      "Market vacancy: 6.1%",
+      "Rent comps available: 3",
+      "Sale comps available: 3",
+      "Cap rate: 8.9%"
+    ],
+    "interpretation": "strongly supportive",
+    "normalized_score": 84.8,
+    "raw_value": 139.055,
+    "signal_name": "inbound household migration"
+  },
+  "NeighborhoodMomentumSignal": {
+    "confidence": 0.94,
+    "drivers": [
+      "Market rent growth: 3.5%",
+      "Market vacancy: 6.1%",
+      "Rent comps available: 3",
+      "Sale comps available: 3",
+      "Cap rate: 8.9%"
+    ],
+    "interpretation": "strongly supportive",
+    "normalized_score": 84.8,
+    "raw_value": 139.055,
+    "signal_name": "neighborhood momentum"
+  },
+  "PermitSupplySignal": {
+    "confidence": 0.94,
+    "drivers": [
+      "Market rent growth: 3.5%",
+      "Market vacancy: 6.1%",
+      "Rent comps available: 3",
+      "Sale comps available: 3",
+      "Cap rate: 8.9%"
+    ],
+    "interpretation": "strongly supportive",
+    "normalized_score": 84.8,
+    "raw_value": 139.055,
+    "signal_name": "new supply pipeline"
+  },
+  "PropertyTaxSignal": {
+    "confidence": 0.94,
+    "drivers": [
+      "Market rent growth: 3.5%",
+      "Market vacancy: 6.1%",
+      "Rent comps available: 3",
+      "Sale comps available: 3",
+      "Cap rate: 8.9%"
+    ],
+    "interpretation": "strongly supportive",
+    "normalized_score": 84.8,
+    "raw_value": 139.055,
+    "signal_name": "tax reassessment pressure"
+  },
+  "RateSensitivitySignal": {
+    "confidence": 0.94,
+    "drivers": [
+      "Market rent growth: 3.5%",
+      "Market vacancy: 6.1%",
+      "Rent comps available: 3",
+      "Sale comps available: 3",
+      "Cap rate: 8.9%"
+    ],
+    "interpretation": "strongly supportive",
+    "normalized_score": 84.8,
+    "raw_value": 139.055,
+    "signal_name": "interest-rate sensitivity"
+  },
+  "RentCompDepthSignal": {
+    "confidence": 0.94,
+    "drivers": [
+      "Market rent growth: 3.5%",
+      "Market vacancy: 6.1%",
+      "Rent comps available: 3",
+      "Sale comps available: 3",
+      "Cap rate: 8.9%"
+    ],
+    "interpretation": "strongly supportive",
+    "normalized_score": 84.8,
+    "raw_value": 139.055,
+    "signal_name": "rent-comp breadth"
+  },
+  "RentControlSignal": {
+    "confidence": 0.94,
+    "drivers": [
+      "Market rent growth: 3.5%",
+      "Market vacancy: 6.1%",
+      "Rent comps available: 3",
+      "Sale comps available: 3",
+      "Cap rate: 8.9%"
+    ],
+    "interpretation": "strongly supportive",
+    "normalized_score": 84.8,
+    "raw_value": 139.055,
+    "signal_name": "regulatory rent restrictions"
+  },
+  "SaleCompDepthSignal": {
+    "confidence": 0.94,
+    "drivers": [
+      "Market rent growth: 3.5%",
+      "Market vacancy: 6.1%",
+      "Rent comps available: 3",
+      "Sale comps available: 3",
+      "Cap rate: 8.9%"
+    ],
+    "interpretation": "strongly supportive",
+    "normalized_score": 84.8,
+    "raw_value": 139.055,
+    "signal_name": "sale-comp breadth"
+  },
+  "SchoolDemandSignal": {
+    "confidence": 0.94,
+    "drivers": [
+      "Market rent growth: 3.5%",
+      "Market vacancy: 6.1%",
+      "Rent comps available: 3",
+      "Sale comps available: 3",
+      "Cap rate: 8.9%"
+    ],
+    "interpretation": "strongly supportive",
+    "normalized_score": 84.8,
+    "raw_value": 139.055,
+    "signal_name": "school-driven demand"
+  },
+  "SubmarketVolatilitySignal": {
+    "confidence": 0.94,
+    "drivers": [
+      "Market rent growth: 3.5%",
+      "Market vacancy: 6.1%",
+      "Rent comps available: 3",
+      "Sale comps available: 3",
+      "Cap rate: 8.9%"
+    ],
+    "interpretation": "strongly supportive",
+    "normalized_score": 84.8,
+    "raw_value": 139.055,
+    "signal_name": "submarket volatility"
+  },
+  "TenantIncomeSignal": {
+    "confidence": 0.94,
+    "drivers": [
+      "Market rent growth: 3.5%",
+      "Market vacancy: 6.1%",
+      "Rent comps available: 3",
+      "Sale comps available: 3",
+      "Cap rate: 8.9%"
+    ],
+    "interpretation": "strongly supportive",
+    "normalized_score": 84.8,
+    "raw_value": 139.055,
+    "signal_name": "tenant income support"
+  },
+  "TransitCommuteSignal": {
+    "confidence": 0.94,
+    "drivers": [
+      "Market rent growth: 3.5%",
+      "Market vacancy: 6.1%",
+      "Rent comps available: 3",
+      "Sale comps available: 3",
+      "Cap rate: 8.9%"
+    ],
+    "interpretation": "strongly supportive",
+    "normalized_score": 84.8,
+    "raw_value": 139.055,
+    "signal_name": "commute accessibility"
+  }
+}

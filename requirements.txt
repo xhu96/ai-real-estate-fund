@@ -1,0 +1,5 @@
+# Core package intentionally has no required third-party dependencies.
+# Optional API/app/dev installs:
+#   python -m pip install -e ".[api]"
+#   python -m pip install -e ".[app]"
+#   python -m pip install -e ".[dev]"

@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>AI Real Estate Fund — Aurora (design preview)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --bg:#1c1a28; --surface-1:#21222f; --surface-2:#292d3c; --surface-3:#33374a; --border:#2e3040; --border-strong:#3c3e52;
+  --ink:#faf9fc; --body:#cccad5; --muted:#8f8d98; --faint:#6f6d7a;
+  --accent:#a549fc; --accent-strong:#8f3df0; --accent-tint:#2a2342; --accent-line:#6a4bb0;
+  --grad-soft:linear-gradient(135deg, #a549fc, #3e7aee); --shadow:0 14px 34px rgba(12,9,20,.5); --shadow-sm:0 6px 18px rgba(12,9,20,.4);
+  --gold:#f0b66a; --gold-tint:#38291a;
+  --buy:#5e94ff; --buy-tint:#1d2742; --neg:#b36bff; --neg-tint:#271b3f; --watch:#e87bae; --watch-tint:#371d2c; --pass:#ff7b7b; --pass-tint:#3a1d23;
+  --t-xs:.6875rem; --t-sm:.8125rem; --t-md:.9375rem; --t-lg:1.1875rem; --t-xl:1.75rem; --t-num:2.25rem; --t-hero:3.75rem;
+  --s1:4px; --s2:8px; --s3:12px; --s4:16px; --s5:24px; --s6:32px; --s7:56px;
+  --r-sm:10px; --r-md:14px; --r-lg:22px; --r-pill:999px; --ease:cubic-bezier(0.16,1,0.3,1);
+  --font:'Inter',ui-sans-serif,system-ui,sans-serif; --font-display:'Poppins','Inter',sans-serif; --mono:'JetBrains Mono',ui-monospace,monospace;
+  color-scheme:dark;
+}
+*{box-sizing:border-box;} html,body{margin:0;}
+body{font-family:var(--font);color:var(--body);font-size:var(--t-md);line-height:1.6;-webkit-font-smoothing:antialiased;background:linear-gradient(137.49deg, #2b1b3f 0%, #221a2f 22%, #1d1b29 96%) fixed;}
+h1,h2,h3,h4{color:var(--ink);margin:0;letter-spacing:-0.02em;font-family:var(--font-display);}
+h1{font-size:var(--t-xl);font-weight:600;} h2{font-size:var(--t-lg);font-weight:600;}
+.num{font-variant-numeric:tabular-nums;} .mono{font-family:var(--mono);}
+::selection{background:var(--accent-tint);color:var(--ink);}
+
+.shell{display:grid;grid-template-columns:256px 1fr;min-height:100vh;}
+.sidebar{background:rgba(33,34,47,.5);backdrop-filter:blur(8px);border-right:1px solid var(--border);display:flex;flex-direction:column;gap:var(--s6);padding:var(--s6) var(--s4);position:sticky;top:0;height:100vh;}
+.brand{display:flex;align-items:center;gap:var(--s3);padding:0 var(--s2);}
+.brand .mark{width:38px;height:38px;flex:none;border-radius:12px;}
+.brand .name{font-size:var(--t-md);color:var(--ink);line-height:1.15;font-family:var(--font-display);}
+.brand .name b{font-weight:700;} .brand .name span{font-weight:300;color:var(--muted);}
+.brand .sub{font-size:var(--t-xs);color:var(--faint);letter-spacing:.06em;text-transform:uppercase;margin-top:4px;}
+.nav-group{display:flex;flex-direction:column;gap:4px;}
+.nav-label{font-size:var(--t-xs);color:var(--faint);letter-spacing:.11em;text-transform:uppercase;padding:0 var(--s3);margin-bottom:var(--s2);}
+.nav a{display:flex;align-items:center;gap:var(--s3);padding:11px var(--s3);border-radius:var(--r-md);color:var(--body);text-decoration:none;font-size:var(--t-md);font-weight:500;transition:.18s;}
+.nav a .ic{width:18px;height:18px;color:var(--muted);}
+.nav a:hover{background:var(--surface-2);color:var(--ink);}
+.nav a.active{background:var(--accent-tint);color:var(--ink);font-weight:600;} .nav a.active .ic{color:var(--accent);}
+.side-foot{margin-top:auto;padding:var(--s4);border-radius:var(--r-md);background:var(--surface-1);}
+.side-foot .row{display:flex;align-items:center;gap:var(--s2);font-size:var(--t-sm);color:var(--body);}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--buy);}
+.side-foot .meta{font-size:var(--t-xs);color:var(--faint);margin-top:6px;}
+
+.main{min-width:0;display:flex;flex-direction:column;}
+.topbar{display:flex;align-items:center;gap:var(--s4);padding:var(--s4) var(--s6);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:10;background:rgba(28,26,40,.62);backdrop-filter:blur(16px);}
+.crumb{display:flex;align-items:center;gap:var(--s2);font-size:var(--t-sm);color:var(--muted);} .crumb b{color:var(--ink);font-weight:600;} .crumb .sep{color:var(--faint);}
+.search{margin-left:var(--s4);flex:1;max-width:380px;display:flex;align-items:center;gap:var(--s2);background:var(--surface-1);border:1px solid var(--border);border-radius:var(--r-pill);padding:10px var(--s4);color:var(--muted);font-size:var(--t-sm);}
+.search kbd{margin-left:auto;font-family:var(--mono);font-size:10px;color:var(--faint);border:1px solid var(--border);border-radius:5px;padding:1px 5px;}
+.env{display:flex;align-items:center;gap:var(--s2);font-size:var(--t-xs);color:var(--muted);border:1px solid var(--border);border-radius:var(--r-pill);padding:5px 12px;font-family:var(--mono);}
+.btn{display:inline-flex;align-items:center;gap:var(--s2);border-radius:var(--r-md);font-weight:600;font-size:var(--t-sm);cursor:pointer;border:1px solid transparent;padding:10px 16px;transition:.16s;}
+.btn-primary{background:var(--accent);color:#fff;box-shadow:var(--shadow-sm);} .btn-primary:hover{background:var(--accent-strong);}
+.btn-ghost{background:var(--surface-2);color:var(--body);} .btn-ghost:hover{background:var(--surface-3);color:var(--ink);}
+
+.content{padding:var(--s6) var(--s6) var(--s7);display:flex;flex-direction:column;gap:var(--s6);max-width:1320px;width:100%;}
+
+.verdict{display:grid;grid-template-columns:auto 1fr;gap:var(--s7);align-items:center;background:var(--surface-1);border:1px solid var(--border);border-radius:var(--r-lg);padding:var(--s6);box-shadow:var(--shadow-sm);}
+.score-disc{display:flex;flex-direction:column;align-items:center;gap:4px;padding-right:var(--s6);border-right:1px solid var(--border);}
+.score-disc .big{font-family:var(--font-display);font-size:var(--t-hero);font-weight:700;color:var(--ink);line-height:.92;letter-spacing:-0.03em;font-variant-numeric:tabular-nums;}
+.score-disc .cap{font-size:var(--t-xs);color:var(--faint);letter-spacing:.08em;text-transform:uppercase;font-family:var(--font);}
+.verdict .head{display:flex;align-items:center;gap:var(--s3);flex-wrap:wrap;}
+.verdict .head .addr{font-size:var(--t-sm);color:var(--muted);}
+.figs{display:grid;grid-template-columns:repeat(5,1fr);gap:var(--s5);margin-top:var(--s5);}
+.fig .l{font-size:var(--t-xs);color:var(--muted);} .fig .v{font-size:var(--t-num);font-weight:600;color:var(--ink);line-height:1.1;margin-top:4px;font-variant-numeric:tabular-nums;font-family:var(--font-display);}
+.fig .v.gold{color:var(--gold);} .fig .v small{font-size:var(--t-sm);color:var(--muted);font-weight:500;} .fig .d{font-size:var(--t-xs);margin-top:3px;color:var(--faint);}
+.up{color:var(--buy);} .down{color:var(--pass);}
+.badge{display:inline-flex;align-items:center;gap:6px;padding:5px 13px;border-radius:var(--r-pill);font-size:var(--t-sm);font-weight:600;letter-spacing:.02em;}
+.badge::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor;}
+.b-buy{background:var(--buy-tint);color:var(--buy);} .b-neg{background:var(--neg-tint);color:var(--neg);}
+.b-watch{background:var(--watch-tint);color:var(--watch);} .b-pass{background:var(--pass-tint);color:var(--pass);}
+.badge.lg{font-size:var(--t-md);padding:7px 17px;}
+
+.panel{background:var(--surface-1);border:1px solid var(--border);border-radius:var(--r-lg);box-shadow:var(--shadow-sm);}
+.panel-h{display:flex;align-items:center;justify-content:space-between;gap:var(--s3);padding:var(--s5) var(--s5) var(--s4);border-bottom:1px solid var(--border);}
+.panel-h .t{display:flex;align-items:center;gap:var(--s3);} .panel-h h2{font-size:var(--t-md);}
+.panel-h .hint{font-size:var(--t-xs);color:var(--muted);font-family:var(--mono);}
+.panel-b{padding:var(--s5);}
+.grid-2{display:grid;grid-template-columns:1.15fr .85fr;gap:var(--s6);} .grid-2b{display:grid;grid-template-columns:1fr 1fr;gap:var(--s6);}
+
+.constellation .legend{display:flex;gap:var(--s4);flex-wrap:wrap;}
+.lg{display:flex;align-items:center;gap:6px;font-size:var(--t-xs);color:var(--muted);} .lg i{width:9px;height:9px;border-radius:50%;display:inline-block;}
+#cst{width:100%;height:520px;display:block;}
+.cst-wrap{position:relative;border-radius:0 0 var(--r-lg) var(--r-lg);overflow:hidden;background:radial-gradient(54% 54% at 50% 47%, rgba(124,92,240,.14), transparent 70%),repeating-linear-gradient(0deg, rgba(180,170,210,.03) 0 1px, transparent 1px 38px),repeating-linear-gradient(90deg, rgba(180,170,210,.03) 0 1px, transparent 1px 38px);}
+.node circle{cursor:pointer;transition:transform .15s var(--ease);} .node:hover circle{transform:scale(1.16);}
+.edge{stroke:var(--accent-line);stroke-width:1;opacity:.16;}
+.arc-label{font-family:var(--mono);font-size:10px;fill:var(--faint);letter-spacing:.06em;text-transform:uppercase;}
+.tooltip{position:absolute;pointer-events:none;min-width:190px;max-width:230px;background:var(--surface-3);border:1px solid var(--border-strong);border-radius:var(--r-md);padding:11px 13px;font-size:var(--t-sm);box-shadow:var(--shadow);opacity:0;transform:translateY(4px);transition:.12s;z-index:5;}
+.tooltip.on{opacity:1;transform:none;}
+.tooltip .tn{font-weight:600;color:var(--ink);display:flex;justify-content:space-between;gap:8px;align-items:center;}
+.tooltip .tr{font-size:var(--t-xs);color:var(--muted);margin:2px 0 6px;font-family:var(--mono);} .tooltip .tt{color:var(--body);font-size:var(--t-xs);line-height:1.45;}
+
+#radar{width:100%;height:300px;display:block;} .radar-tags{display:flex;flex-wrap:wrap;gap:var(--s2) var(--s4);margin-top:var(--s4);} .radar-tags span{font-size:var(--t-xs);color:var(--muted);}
+.scn{display:flex;flex-direction:column;gap:var(--s4);}
+.scn .row{display:grid;grid-template-columns:96px 1fr;gap:var(--s3);align-items:center;} .scn .row .lab{font-size:var(--t-sm);color:var(--body);}
+.track{position:relative;height:30px;background:var(--surface-3);border-radius:var(--r-sm);overflow:hidden;}
+.range{position:absolute;top:0;bottom:0;border-radius:var(--r-sm);background:var(--accent);opacity:.32;}
+.mark{position:absolute;top:-3px;bottom:-3px;width:2px;background:var(--gold);} .mark .pin{position:absolute;top:-15px;left:50%;transform:translateX(-50%);font-size:10px;color:var(--ink);font-family:var(--mono);white-space:nowrap;}
+.scn .ends{display:flex;justify-content:space-between;font-size:10px;color:var(--faint);font-family:var(--mono);margin-top:2px;}
+
+.gates{display:flex;flex-direction:column;}
+.gate{display:flex;align-items:center;gap:var(--s3);padding:var(--s4) 0;border-top:1px solid var(--border);} .gate:first-child{border-top:0;}
+.gate .g-ic{width:26px;height:26px;border-radius:50%;display:grid;place-items:center;flex:none;font-size:12px;font-weight:700;}
+.g-pass{background:var(--buy-tint);color:var(--buy);} .g-warn{background:var(--watch-tint);color:var(--watch);} .g-fail{background:var(--pass-tint);color:var(--pass);}
+.gate .g-name{font-size:var(--t-sm);color:var(--ink);font-weight:500;} .gate .g-msg{font-size:var(--t-xs);color:var(--muted);}
+.gate .g-val{margin-left:auto;font-family:var(--mono);font-size:var(--t-sm);color:var(--body);}
+table.tbl{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums;}
+.tbl th{font-size:var(--t-xs);color:var(--muted);text-align:left;font-weight:500;padding:0 var(--s3) var(--s3);border-bottom:1px solid var(--border);}
+.tbl td{padding:var(--s4) var(--s3);border-bottom:1px solid var(--border);font-size:var(--t-sm);color:var(--body);} .tbl tr:last-child td{border-bottom:0;} .tbl td.strong{color:var(--ink);font-weight:600;}
+.sev{display:inline-flex;align-items:center;gap:6px;font-size:var(--t-xs);font-weight:600;} .sev::before{content:"";width:8px;height:8px;border-radius:3px;}
+.sev.h::before{background:var(--pass);} .sev.h{color:var(--pass);} .sev.m::before{background:var(--watch);} .sev.m{color:var(--watch);} .sev.l::before{background:var(--buy);} .sev.l{color:var(--buy);}
+.debate{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--s4);}
+.persona{background:var(--surface-2);border-radius:var(--r-md);padding:var(--s5);display:flex;flex-direction:column;gap:var(--s3);}
+.persona .ph{display:flex;align-items:center;gap:var(--s2);} .persona .av{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;font-size:var(--t-xs);font-weight:700;font-family:var(--mono);}
+.persona .pn{font-size:var(--t-sm);font-weight:600;color:var(--ink);} .persona .pt{font-size:var(--t-xs);color:var(--body);line-height:1.55;} .persona .pq{margin-top:auto;font-size:11px;color:var(--faint);font-family:var(--mono);}
+.reveal{opacity:0;transform:translateY(8px);animation:rise .6s var(--ease) forwards;}
+@keyframes rise{to{opacity:1;transform:none;}} @keyframes pulse{0%,100%{opacity:.4;}50%{opacity:.85;}} @keyframes sweepRot{to{transform:rotate(360deg);}}
+.note{font-size:var(--t-xs);color:var(--faint);text-align:center;padding:var(--s5) 0 var(--s6);}
+@media (max-width:1100px){.figs{grid-template-columns:repeat(3,1fr);}.grid-2,.grid-2b{grid-template-columns:1fr;}.debate{grid-template-columns:1fr 1fr;}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;}.reveal{opacity:1;transform:none;}}
+</style>
+</head>
+<body>
+<div class="shell">
+  <aside class="sidebar">
+    <div class="brand">
+      <svg class="mark" viewBox="0 0 38 38" fill="none" aria-hidden="true">
+        <defs><linearGradient id="bm" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#a549fc"/><stop offset="1" stop-color="#3e7aee"/></linearGradient></defs>
+        <rect width="38" height="38" rx="12" fill="url(#bm)"/>
+        <path d="M10 26V16l9-6 9 6v10" stroke="#fff" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>
+        <path d="M15 26v-6h8v6" stroke="#fff" stroke-opacity=".8" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>
+      </svg>
+      <div><div class="name"><b>Real Estate</b> <span>Fund</span></div><div class="sub">Diligence Engine</div></div>
+    </div>
+    <nav class="nav">
+      <div class="nav-group"><div class="nav-label">Workspace</div>
+        <a href="#"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="9"/><rect x="14" y="3" width="7" height="5"/><rect x="14" y="12" width="7" height="9"/><rect x="3" y="16" width="7" height="5"/></svg>Overview</a>
+        <a href="#" class="active"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg>Analyze deal</a>
+        <a href="#"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h10"/></svg>Runs</a>
+      </div>
+      <div class="nav-group" style="margin-top:var(--s5)"><div class="nav-label">Fund</div>
+        <a href="#"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 1 0 18"/></svg>Portfolio</a>
+        <a href="#"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v18M3 8h18M3 16h18"/></svg>Research lab</a>
+        <a href="#"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 13a7.5 7.5 0 0 0 0-2l2-1.5-2-3.5-2.4 1a7 7 0 0 0-1.7-1L15 3h-4l-.3 2.5a7 7 0 0 0-1.7 1l-2.4-1-2 3.5 2 1.5a7.5 7.5 0 0 0 0 2l-2 1.5 2 3.5 2.4-1a7 7 0 0 0 1.7 1L11 21h4l.3-2.5a7 7 0 0 0 1.7-1l2.4 1 2-3.5z"/></svg>Settings</a>
+      </div>
+    </nav>
+    <div class="side-foot"><div class="row"><span class="dot"></span> Engine ready</div><div class="meta">77 deterministic workstreams · 4 LLM analysts</div></div>
+  </aside>
+
+  <div class="main">
+    <div class="topbar">
+      <div class="crumb">Fund <span class="sep">/</span> <b>Analyze</b></div>
+      <div class="search"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg> Search deals, runs, agents… <kbd>⌘K</kbd></div>
+      <span class="env">localhost:8000</span>
+      <button class="btn btn-ghost">Export memo</button>
+      <button class="btn btn-primary"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 3l14 9-14 9z"/></svg> Run committee</button>
+    </div>
+
+    <div class="content">
+      <section class="verdict reveal">
+        <div class="score-disc"><div class="cap">Overall</div><div class="big">72.4</div><div class="cap">of 100</div></div>
+        <div>
+          <div class="head"><span class="badge b-neg lg">Negotiate</span><h1>1428 Maple Court</h1><span class="addr">· 12-unit multifamily · Greenville, SC</span></div>
+          <div class="figs">
+            <div class="fig"><div class="l">Suggested allocation</div><div class="v num">6.0<small>%</small></div><div class="d up">within sleeve cap</div></div>
+            <div class="fig"><div class="l">Going-in cap</div><div class="v num gold">5.8<small>%</small></div><div class="d down">−40bps vs target</div></div>
+            <div class="fig"><div class="l">Stabilized yield</div><div class="v num">7.1<small>%</small></div><div class="d up">+130bps spread</div></div>
+            <div class="fig"><div class="l">DSCR (yr 1)</div><div class="v num">1.34<small>x</small></div><div class="d up">covenant 1.20x</div></div>
+            <div class="fig"><div class="l">5-yr levered IRR</div><div class="v num gold">14.2<small>%</small></div><div class="d up">base case</div></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel constellation reveal">
+        <div class="panel-h">
+          <div class="t"><h2>Investment committee</h2><span class="hint">31 workstreams · IC chair synthesis</span></div>
+          <div class="legend">
+            <span class="lg"><i style="background:var(--buy)"></i>Buy</span>
+            <span class="lg"><i style="background:var(--neg)"></i>Negotiate</span>
+            <span class="lg"><i style="background:var(--watch)"></i>Watch</span>
+            <span class="lg"><i style="background:var(--pass)"></i>Pass</span>
+            <span class="lg" style="color:var(--faint)">node size = confidence</span>
+          </div>
+        </div>
+        <div class="cst-wrap"><svg id="cst" viewBox="0 0 900 520" role="img" aria-label="Radial graph of 31 committee workstreams grouped by domain, colored by recommendation, sized by confidence, around the IC chair."></svg><div class="tooltip" id="tip"></div></div>
+      </section>
+
+      <div class="grid-2">
+        <section class="panel reveal">
+          <div class="panel-h"><div class="t"><h2>Scorecard by domain</h2></div><span class="hint">0–100</span></div>
+          <div class="panel-b"><svg id="radar" viewBox="0 0 360 300" role="img" aria-label="Radar of committee scores across eight domains."></svg><div class="radar-tags" id="radarTags"></div></div>
+        </section>
+        <section class="panel reveal">
+          <div class="panel-h"><div class="t"><h2>Scenario stress</h2></div><span class="hint">downside · base · upside</span></div>
+          <div class="panel-b scn">
+            <div><div class="row"><span class="lab">5-yr IRR</span><div class="track"><div class="range" style="left:8%;right:14%"></div><div class="mark" style="left:46%"><span class="pin">14.2%</span></div></div></div><div class="ends" style="margin-left:108px"><span>4.1%</span><span>22.6%</span></div></div>
+            <div><div class="row"><span class="lab">DSCR yr 1</span><div class="track"><div class="range" style="left:6%;right:20%"></div><div class="mark" style="left:42%"><span class="pin">1.34x</span></div></div></div><div class="ends" style="margin-left:108px"><span>1.05x</span><span>1.61x</span></div></div>
+            <div><div class="row"><span class="lab">Equity mult.</span><div class="track"><div class="range" style="left:10%;right:12%"></div><div class="mark" style="left:50%"><span class="pin">1.9x</span></div></div></div><div class="ends" style="margin-left:108px"><span>1.2x</span><span>2.6x</span></div></div>
+            <div><div class="row"><span class="lab">Exit cap</span><div class="track"><div class="range" style="left:12%;right:10%"></div><div class="mark" style="left:55%"><span class="pin">6.25%</span></div></div></div><div class="ends" style="margin-left:108px"><span>5.50%</span><span>7.25%</span></div></div>
+          </div>
+        </section>
+      </div>
+
+      <div class="grid-2b">
+        <section class="panel reveal">
+          <div class="panel-h"><div class="t"><h2>Policy gates</h2></div><span class="hint">5 of 6 pass</span></div>
+          <div class="panel-b gates">
+            <div class="gate"><span class="g-ic g-pass">✓</span><div><div class="g-name">DSCR floor</div><div class="g-msg">Year-1 coverage clears the 1.20x hard stop</div></div><span class="g-val">1.34x</span></div>
+            <div class="gate"><span class="g-ic g-pass">✓</span><div><div class="g-name">LTV ceiling</div><div class="g-msg">Sized to agency max with cushion</div></div><span class="g-val">71%</span></div>
+            <div class="gate"><span class="g-ic g-warn">!</span><div><div class="g-name">Going-in cap vs target</div><div class="g-msg">40bps inside target — pricing concession needed</div></div><span class="g-val">5.8%</span></div>
+            <div class="gate"><span class="g-ic g-pass">✓</span><div><div class="g-name">Reserve adequacy</div><div class="g-msg">CapEx + operating reserves above floor</div></div><span class="g-val">$214k</span></div>
+            <div class="gate"><span class="g-ic g-pass">✓</span><div><div class="g-name">Concentration limit</div><div class="g-msg">Sunbelt multifamily sleeve under 25% cap</div></div><span class="g-val">18.4%</span></div>
+          </div>
+        </section>
+        <section class="panel reveal">
+          <div class="panel-h"><div class="t"><h2>Risk register</h2></div><span class="hint">top 4 of 14</span></div>
+          <div class="panel-b">
+            <table class="tbl"><thead><tr><th>Risk</th><th>Severity</th><th>Likelihood</th><th style="text-align:right">Mitigant</th></tr></thead><tbody>
+              <tr><td class="strong">Lease-up pace below pro forma</td><td><span class="sev h">High</span></td><td>Medium</td><td style="text-align:right">Concession budget</td></tr>
+              <tr><td class="strong">Insurance premium escalation</td><td><span class="sev m">Medium</span></td><td>High</td><td style="text-align:right">3-yr quote lock</td></tr>
+              <tr><td class="strong">Exit cap expansion</td><td><span class="sev m">Medium</span></td><td>Medium</td><td style="text-align:right">Rate cap + hold flex</td></tr>
+              <tr><td class="strong">Property-tax reassessment</td><td><span class="sev l">Low</span></td><td>Medium</td><td style="text-align:right">Appeal modeled</td></tr>
+            </tbody></table>
+          </div>
+        </section>
+      </div>
+
+      <section class="panel reveal">
+        <div class="panel-h"><div class="t"><h2>Analyst debate</h2><span class="hint">deepseek-v4-flash · scores never model-generated</span></div></div>
+        <div class="panel-b"><div class="debate">
+          <div class="persona"><div class="ph"><span class="av" style="background:var(--buy-tint);color:var(--buy)">BL</span><span class="pn">Bull advocate</span></div><div class="pt">Rent gap to comps is real; light value-add turns support a 7%+ stabilized yield with modest capex.</div><div class="pq">“Underwrite the upside as base.”</div></div>
+          <div class="persona"><div class="ph"><span class="av" style="background:var(--pass-tint);color:var(--pass)">BR</span><span class="pn">Bear advocate</span></div><div class="pt">Sunbelt supply wave hits 2026–27. Concessions could erase the rent premium before stabilization.</div><div class="pq">“Stress lease-up to 9 months.”</div></div>
+          <div class="persona"><div class="ph"><span class="av" style="background:var(--watch-tint);color:var(--watch)">RO</span><span class="pn">Risk officer</span></div><div class="pt">Coverage holds, but exit-cap and insurance are binding. Cap the rate, lock the quote.</div><div class="pq">“Two mitigants are non-optional.”</div></div>
+          <div class="persona"><div class="ph"><span class="av" style="background:var(--neg-tint);color:var(--neg)">IC</span><span class="pn">IC chair</span></div><div class="pt">Quality asset, mispriced by ~40bps. Proceed only with a price concession and the risk mitigants attached.</div><div class="pq">“Negotiate, don’t walk.”</div></div>
+        </div></div>
+      </section>
+
+      <div class="note">Design preview · “Aurora” direction · sample data — not a live run</div>
+    </div>
+  </div>
+</div>
+
+<script>
+const V={buy:'var(--buy)',negotiate:'var(--neg)',watch:'var(--watch)',pass:'var(--pass)'};
+const VK={buy:'Buy',negotiate:'Negotiate',watch:'Watchlist',pass:'Pass'};
+const domains=[
+ {key:'Acquisition',members:[['Pricing','buy',.86,'Basis 8% below replacement cost'],['Sale comps','negotiate',.71,'Thin recent comp set'],['Valuation bridge','negotiate',.64,'DCF and comps disagree by 5%'],['Bid strategy','buy',.58,'Room for seller credits']]},
+ {key:'Income',members:[['Rent comps','buy',.82,'$120 gap to renovated comps'],['Tenant demand','buy',.77,'Sub-4% submarket vacancy'],['Lease-up','watch',.55,'Absorption sensitive to supply'],['Cash-flow quality','negotiate',.69,'Other-income assumptions rich']]},
+ {key:'Expenses',members:[['Expense load','negotiate',.7,'OpEx ratio above peer median'],['Taxes','watch',.6,'Reassessment risk at sale'],['Insurance','pass',.74,'Premiums +28% YoY'],['Reserves','buy',.8,'Sized above floor']]},
+ {key:'Debt',members:[['Debt structure','buy',.84,'Agency fixed, 5-yr IO'],['DSCR / coverage','buy',.9,'1.34x clears covenant'],['Refinance','watch',.52,'Take-out depends on exit cap'],['Liquidity stress','negotiate',.66,'12-mo runway downside']]},
+ {key:'Condition',members:[['Property condition','negotiate',.68,'Roofs near end of life'],['Renovation','buy',.72,'$6.5k/unit vetted scope'],['Environmental','buy',.88,'Phase I clean'],['Title & legal','buy',.91,'No clouds; survey clear']]},
+ {key:'Market',members:[['Market','buy',.79,'Top-quintile jobs & migration'],['Neighborhood','buy',.7,'Improving, transit-adjacent'],['Zoning','watch',.6,'By-right; overlay pending'],['Appreciation','negotiate',.57,'Priced for modest growth']]},
+ {key:'Portfolio',members:[['Portfolio fit','buy',.75,'Diversifies metro concentration'],['Exit liquidity','negotiate',.62,'Buyer pool rate-sensitive'],['Sponsor fit','buy',.8,'In-footprint operator']]},
+ {key:'Governance',members:[['Data quality','watch',.5,'2 inputs below floor'],['Risk officer','negotiate',.7,'Two mitigants required'],['Bull case','buy',.6,'Upside if rents hold'],['Bear case','pass',.55,'Supply + concessions']]},
+];
+const NS='http://www.w3.org/2000/svg', svg=document.getElementById('cst');
+const cx=450,cy=258,R=196, tip=document.getElementById('tip'), wrap=document.querySelector('.cst-wrap');
+const el=(n,a)=>{const e=document.createElementNS(NS,n);for(const k in a)e.setAttribute(k,a[k]);return e;};
+const sweep=el('line',{x1:cx,y1:cy,x2:cx,y2:cy-R-14,stroke:'var(--accent-line)','stroke-width':1.5,opacity:.14});
+sweep.style.transformOrigin=cx+'px '+cy+'px'; sweep.style.animation='sweepRot 20s linear infinite'; svg.appendChild(sweep);
+[0.5,0.78,1].forEach(f=>svg.appendChild(el('circle',{cx,cy,r:R*f,fill:'none',stroke:'var(--border)','stroke-width':1,opacity:.6})));
+const total=domains.reduce((s,d)=>s+d.members.length,0); let idx=0,ni=0; const gap=0.05;
+const edgesG=el('g',{}),nodesG=el('g',{}),labelsG=el('g',{}); svg.appendChild(edgesG);svg.appendChild(nodesG);svg.appendChild(labelsG);
+domains.forEach(d=>{
+  const span=(d.members.length/total)*Math.PI*2, start=(idx/total)*Math.PI*2-Math.PI/2+gap/2, end=start+span-gap, mid=(start+end)/2, lr=R+30;
+  const tl=el('text',{x:cx+Math.cos(mid)*lr,y:cy+Math.sin(mid)*lr,'text-anchor':(Math.cos(mid)<-.3?'end':Math.cos(mid)>.3?'start':'middle'),'dominant-baseline':'middle',class:'arc-label'});tl.textContent=d.key;labelsG.appendChild(tl);
+  d.members.forEach((m,j)=>{
+    const t=d.members.length===1?0.5:j/(d.members.length-1), ang=start+(end-start)*t, rad=R*(0.82+(j%2)*0.14);
+    const x=cx+Math.cos(ang)*rad,y=cy+Math.sin(ang)*rad, col=V[m[1]], conf=m[2], rr=6+conf*9;
+    const e=el('line',{x1:cx,y1:cy,x2:x,y2:y,class:'edge'}); e.style.opacity=0; e.style.transition='opacity .5s ease '+(ni*20)+'ms'; edgesG.appendChild(e); requestAnimationFrame(()=>{e.style.opacity=.16;});
+    const g=el('g',{class:'node'}); g.appendChild(el('circle',{cx:x,cy:y,r:rr+4,fill:col,opacity:.12})); g.appendChild(el('circle',{cx:x,cy:y,r:rr,fill:col,stroke:'var(--bg)','stroke-width':2}));
+    g.style.opacity=0; g.style.transition='opacity .45s var(--ease) '+(120+ni*24)+'ms';
+    g.addEventListener('mouseenter',()=>{const r=wrap.getBoundingClientRect(),sx=x/900*r.width,sy=y/520*r.height;tip.innerHTML='<div class="tn">'+m[0]+'<span style="color:'+col+';font-size:11px;font-weight:700">'+VK[m[1]]+'</span></div><div class="tr">confidence '+Math.round(conf*100)+'%</div><div class="tt">'+m[3]+'</div>';let L=sx+16;if(L>r.width-240)L=sx-236;if(L<6)L=6;let T=sy-10;if(T<6)T=6;if(T>r.height-110)T=r.height-110;tip.style.left=L+'px';tip.style.top=T+'px';tip.classList.add('on');});
+    g.addEventListener('mouseleave',()=>tip.classList.remove('on'));
+    nodesG.appendChild(g); requestAnimationFrame(()=>{g.style.opacity=1;}); ni++;
+  });
+  idx+=d.members.length;
+});
+const halo=el('circle',{cx,cy,r:34,fill:'var(--accent)',opacity:.14}); halo.style.animation='pulse 3.6s ease-in-out infinite'; svg.appendChild(halo);
+svg.appendChild(el('circle',{cx,cy,r:26,fill:'var(--accent-tint)',stroke:'var(--accent)','stroke-width':1.5}));
+const ct=el('text',{x:cx,y:cy-2,'text-anchor':'middle',fill:'var(--ink)','font-size':17,'font-weight':600,'font-family':'var(--font-display)'});ct.textContent='72.4';svg.appendChild(ct);
+const cs=el('text',{x:cx,y:cy+13,'text-anchor':'middle',fill:'var(--accent)','font-size':9,'font-family':'var(--mono)','letter-spacing':'.08em'});cs.textContent='IC CHAIR';svg.appendChild(cs);
+
+const rsvg=document.getElementById('radar'), RD=[['Acq',74],['Inc',78],['Exp',58],['Debt',83],['Cond',79],['Mkt',75],['Port',71],['Gov',62]], rcx=180,rcy=148,rR=110;
+[0.25,0.5,0.75,1].forEach(f=>{let p='';RD.forEach((_,i)=>{const a=(i/RD.length)*Math.PI*2-Math.PI/2;p+=(rcx+Math.cos(a)*rR*f)+','+(rcy+Math.sin(a)*rR*f)+' ';});rsvg.appendChild(el('polygon',{points:p,fill:'none',stroke:'var(--border)','stroke-width':1,opacity:.6}));});
+RD.forEach((d,i)=>{const a=(i/RD.length)*Math.PI*2-Math.PI/2;rsvg.appendChild(el('line',{x1:rcx,y1:rcy,x2:rcx+Math.cos(a)*rR,y2:rcy+Math.sin(a)*rR,stroke:'var(--border)','stroke-width':1,opacity:.5}));const t=el('text',{x:rcx+Math.cos(a)*(rR+16),y:rcy+Math.sin(a)*(rR+16),'text-anchor':'middle','dominant-baseline':'middle','font-size':10,fill:'var(--muted)','font-family':'var(--mono)'});t.textContent=d[0];rsvg.appendChild(t);});
+let dp='';RD.forEach((d,i)=>{const a=(i/RD.length)*Math.PI*2-Math.PI/2,r=rR*(d[1]/100);dp+=(rcx+Math.cos(a)*r)+','+(rcy+Math.sin(a)*r)+' ';});
+rsvg.appendChild(el('polygon',{points:dp,fill:'var(--accent)','fill-opacity':.18,stroke:'var(--accent)','stroke-width':2}));
+RD.forEach((d,i)=>{const a=(i/RD.length)*Math.PI*2-Math.PI/2,r=rR*(d[1]/100);rsvg.appendChild(el('circle',{cx:rcx+Math.cos(a)*r,cy:rcy+Math.sin(a)*r,r:2.6,fill:'var(--accent)'}));});
+document.getElementById('radarTags').innerHTML=RD.map(d=>'<span><b style="color:var(--ink);font-variant-numeric:tabular-nums">'+d[1]+'</b> '+d[0]+'</span>').join('');
+</script>
+</body>
+</html>

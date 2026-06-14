@@ -1,0 +1,1327 @@
+{
+  "AccountingAdapter": [
+    {
+      "as_of": "fixture",
+      "confidence": 0.82,
+      "external_id": "123 test ave|san antonio, tx||25::0",
+      "fields": {
+        "cash_receipts": "cash_receipts_fixture_0",
+        "general_ledger": "general_ledger_fixture_0",
+        "payables": "payables_fixture_0",
+        "trial_balance": "trial_balance_fixture_0"
+      },
+      "provenance": {
+        "cache_key": "123 test ave|san antonio, tx||25",
+        "mode": "offline"
+      },
+      "quality_warnings": [],
+      "source": "accounting system"
+    },
+    {
+      "as_of": "fixture",
+      "confidence": 0.7899999999999999,
+      "external_id": "123 test ave|san antonio, tx||25::1",
+      "fields": {
+        "cash_receipts": "cash_receipts_fixture_1",
+        "general_ledger": "general_ledger_fixture_1",
+        "payables": "payables_fixture_1",
+        "trial_balance": "trial_balance_fixture_1"
+      },
+      "provenance": {
+        "cache_key": "123 test ave|san antonio, tx||25",
+        "mode": "offline"
+      },
+      "quality_warnings": [],
+      "source": "accounting system"
+    },
+    {
+      "as_of": "fixture",
+      "confidence": 0.76,
+      "external_id": "123 test ave|san antonio, tx||25::2",
+      "fields": {
+        "cash_receipts": "cash_receipts_fixture_2",
+        "general_ledger": "general_ledger_fixture_2",
+        "payables": "payables_fixture_2",
+        "trial_balance": "trial_balance_fixture_2"
+      },
+      "provenance": {
+        "cache_key": "123 test ave|san antonio, tx||25",
+        "mode": "offline"
+      },
+      "quality_warnings": [],
+      "source": "accounting system"
+    }
+  ],
+  "AppraisalAdapter": [
+    {
+      "as_of": "fixture",
+      "confidence": 0.82,
+      "external_id": "123 test ave|san antonio, tx||25::0",
+      "fields": {
+        "approach": "approach_fixture_0",
+        "cap_rate": 0.05,
+        "comps": "comps_fixture_0",
+        "value": 100000
+      },
+      "provenance": {
+        "cache_key": "123 test ave|san antonio, tx||25",
+        "mode": "offline"
+      },
+      "quality_warnings": [],
+      "source": "appraisal reports"
+    },
+    {
+      "as_of": "fixture",
+      "confidence": 0.7899999999999999,
+      "external_id": "123 test ave|san antonio, tx||25::1",
+      "fields": {
+        "approach": "approach_fixture_1",
+        "cap_rate": 0.06,
+        "comps": "comps_fixture_1",
+        "value": 112500
+      },
+      "provenance": {
+        "cache_key": "123 test ave|san antonio, tx||25",
+        "mode": "offline"
+      },
+      "quality_warnings": [],
+      "source": "appraisal reports"
+    },
+    {
+      "as_of": "fixture",
+      "confidence": 0.76,
+      "external_id": "123 test ave|san antonio, tx||25::2",
+      "fields": {
+        "approach": "approach_fixture_2",
+        "cap_rate": 0.07,
+        "comps": "comps_fixture_2",
+        "value": 125000
+      },
+      "provenance": {
+        "cache_key": "123 test ave|san antonio, tx||25",
+        "mode": "offline"
+      },
+      "quality_warnings": [],
+      "source": "appraisal reports"
+    }
+  ],
+  "AvmAdapter": [
+    {
+      "as_of": "fixture",
+      "confidence": 0.82,
+      "external_id": "123 test ave|san antonio, tx||25::0",
+      "fields": {
+        "confidence": 0.05,
+        "range_high": "range_high_fixture_0",
+        "range_low": "range_low_fixture_0",
+        "value": 100000
+      },
+      "provenance": {
+        "cache_key": "123 test ave|san antonio, tx||25",
+        "mode": "offline"
+      },
+      "quality_warnings": [],
+      "source": "automated valuation"
+    },
+    {
+      "as_of": "fixture",
+      "confidence": 0.7899999999999999,
+      "external_id": "123 test ave|san antonio, tx||25::1",
+      "fields": {
+        "confidence": 0.06,
+        "range_high": "range_high_fixture_1",
+        "range_low": "range_low_fixture_1",
+        "value": 112500
+      },
+      "provenance": {
+        "cache_key": "123 test ave|san antonio, tx||25",
+        "mode": "offline"
+      },
+      "quality_warnings": [],
+      "source": "automated valuation"
+    },
+    {
+      "as_of": "fixture",
+      "confidence": 0.76,
+      "external_id": "123 test ave|san antonio, tx||25::2",
+      "fields": {
+        "confidence": 0.07,
+        "range_high": "range_high_fixture_2",
+        "range_low": "range_low_fixture_2",
+        "value": 125000
+      },
+      "provenance": {
+        "cache_key": "123 test ave|san antonio, tx||25",
+        "mode": "offline"
+      },
+      "quality_warnings": [],
+      "source": "automated valuation"
+    }
+  ],
+  "BankStatementAdapter": [
+    {
+      "as_of": "fixture",
+      "confidence": 0.82,
+      "external_id": "123 test ave|san antonio, tx||25::0",
+      "fields": {
+        "counterparty": "counterparty_fixture_0",
+        "date": "2026-01-01",
+        "deposit": "deposit_fixture_0",
+        "withdrawal": "withdrawal_fixture_0"
+      },
+      "provenance": {
+        "cache_key": "123 test ave|san antonio, tx||25",
+        "mode": "offline"
+      },
+      "quality_warnings": [],
+      "source": "bank statements"
+    },
+    {
+      "as_of": "fixture",
+      "confidence": 0.7899999999999999,
+      "external_id": "123 test ave|san antonio, tx||25::1",
+      "fields": {
+        "counterparty": "counterparty_fixture_1",
+        "date": "2026-01-01",
+        "deposit": "deposit_fixture_1",
+        "withdrawal": "withdrawal_fixture_1"
+      },
+      "provenance": {
+        "cache_key": "123 test ave|san antonio, tx||25",
+        "mode": "offline"
+      },
+      "quality_warnings": [],
+      "source": "bank statements"
+    },
+    {
+      "as_of": "fixture",
+      "confidence": 0.76,
+      "external_id": "123 test ave|san antonio, tx||25::2",
+      "fields": {
+        "counterparty": "counterparty_fixture_2",
+        "date": "2026-01-01",
+        "deposit": "deposit_fixture_2",
+        "withdrawal": "withdrawal_fixture_2"
+      },
+      "provenance": {
+        "cache_key": "123 test ave|san antonio, tx||25",
+        "mode": "offline"
+      },
+      "quality_warnings": [],
+      "source": "bank statements"
+    }
+  ],
+  "BrokerOpinionAdapter": [
+    {
+      "as_of": "fixture",
+      "confidence": 0.82,
+      "external_id": "123 test ave|san antonio, tx||25::0",
+      "fields": {
+        "buyer_pool": "buyer_pool_fixture_0",
+        "cap_rate": 0.05,
+        "marketing_time": "marketing_time_fixture_0",
+        "value_range": 100000
+      },
+      "provenance": {
+        "cache_key": "123 test ave|san antonio, tx||25",
+        "mode": "offline"
+      },
+      "quality_warnings": [],
+      "source": "broker opinions"
+    },
+    {
+      "as_of": "fixture",
+      "confidence": 0.7899999999999999,
+      "external_id": "123 test ave|san antonio, tx||25::1",
+      "fields": {
+        "buyer_pool": "buyer_pool_fixture_1",
+        "cap_rate": 0.06,
+        "marketing_time": "marketing_time_fixture_1",
+        "value_range": 112500
+      },
+      "provenance": {
+        "cache_key": "123 test ave|san antonio, tx||25",
+        "mode": "offline"
+      },
+      "quality_warnings": [],
+      "source": "broker opinions"
+    },
+    {
+      "as_of": "fixture",
+      "confidence": 0.76,
+      "external_id": "123 test ave|san antonio, tx||25::2",
+      "fields": {
+        "buyer_pool": "buyer_pool_fixture_2",
+        "cap_rate": 0.07,
+        "marketing_time": "marketing_time_fixture_2",
+        "value_range": 125000
+      },
+      "provenance": {
+        "cache_key": "123 test ave|san antonio, tx||25",
+        "mode": "offline"
+      },
+      "quality_warnings": [],
+      "source": "broker opinions"
+    }
+  ],
+  "BuildingPermitAdapter": [
+    {
+      "as_of": "fixture",
+      "confidence": 0.82,
+      "external_id": "123 test ave|san antonio, tx||25::0",
+      "fields": {
+        "issued_date": "2026-01-01",
+        "permit_type": "permit_type_fixture_0",
+        "units": "units_fixture_0",
+        "value": 100000
+      },
+      "provenance": {
+        "cache_key": "123 test ave|san antonio, tx||25",
+        "mode": "offline"
+      },
+      "quality_warnings": [],
+      "source": "building permits"
+    },
+    {
+      "as_of": "fixture",
+      "confidence": 0.7899999999999999,
+      "external_id": "123 test ave|san antonio, tx||25::1",
+      "fields": {
+        "issued_date": "2026-01-01",
+        "permit_type": "permit_type_fixture_1",
+        "units": "units_fixture_1",
+        "value": 112500
+      },
+      "provenance": {
+        "cache_key": "123 test ave|san antonio, tx||25",
+        "mode": "offline"
+      },
+      "quality_warnings": [],
+      "source": "building permits"
+    },
+    {
+      "as_of": "fixture",
+      "confidence": 0.76,
+      "external_id": "123 test ave|san antonio, tx||25::2",
+      "fields": {
+        "issued_date": "2026-01-01",
+        "permit_type": "permit_type_fixture_2",
+        "units": "units_fixture_2",
+        "value": 125000
+      },
+      "provenance": {
+        "cache_key": "123 test ave|san antonio, tx||25",
+        "mode": "offline"
+      },
+      "quality_warnings": [],
+      "source": "building permits"
+    }
+  ],
+  "CensusAdapter": [
+    {
+      "as_of": "fixture",
+      "confidence": 0.82,
+      "external_id": "123 test ave|san antonio, tx||25::0",
+      "fields": {
+        "households": "households_fixture_0",
+        "income": "income_fixture_0",
+        "population": "population_fixture_0",
+        "renter_share": 100000
+      },
+      "provenance": {
+        "cache_key": "123 test ave|san antonio, tx||25",
+        "mode": "offline"
+      },
+      "quality_warnings": [],
+      "source": "census data"
+    },
+    {
+      "as_of": "fixture",
+      "confidence": 0.7899999999999999,
+      "external_id": "123 test ave|san antonio, tx||25::1",
+      "fields": {
+        "households": "households_fixture_1",
+        "income": "income_fixture_1",
+        "population": "population_fixture_1",
+        "renter_share": 112500
+      },
+      "provenance": {
+        "cache_key": "123 test ave|san antonio, tx||25",
+        "mode": "offline"
+      },
+      "quality_warnings": [],
+      "source": "census data"
+    },
+    {
+      "as_of": "fixture",
+      "confidence": 0.76,
+      "external_id": "123 test ave|san antonio, tx||25::2",
+      "fields": {
+        "households": "households_fixture_2",
+        "income": "income_fixture_2",
+        "population": "population_fixture_2",
+        "renter_share": 125000
+      },
+      "provenance": {
+        "cache_key": "123 test ave|san antonio, tx||25",
+        "mode": "offline"
+      },
+      "quality_warnings": [],
+      "source": "census data"
+    }
+  ],
+  "ClimateRiskAdapter": [
+    {
+      "as_of": "fixture",
+      "confidence": 0.82,
+      "external_id": "123 test ave|san antonio, tx||25::0",
+      "fields": {
+        "flood": "flood_fixture_0",
+        "heat": "heat_fixture_0",
+        "wildfire": "wildfire_fixture_0",
+        "wind": "wind_fixture_0"
+      },
+      "provenance": {
+        "cache_key": "123 test ave|san antonio, tx||25",
+        "mode": "offline"
+      },
+      "quality_warnings": [],
+      "source": "climate risk"
+    },
+    {
+      "as_of": "fixture",
+      "confidence": 0.7899999999999999,
+      "external_id": "123 test ave|san antonio, tx||25::1",
+      "fields": {
+        "flood": "flood_fixture_1",
+        "heat": "heat_fixture_1",
+        "wildfire": "wildfire_fixture_1",
+        "wind": "wind_fixture_1"
+      },
+      "provenance": {
+        "cache_key": "123 test ave|san antonio, tx||25",
+        "mode": "offline"
+      },
+      "quality_warnings": [],
+      "source": "climate risk"
+    },
+    {
+      "as_of": "fixture",
+      "confidence": 0.76,
+      "external_id": "123 test ave|san antonio, tx||25::2",
+      "fields": {
+        "flood": "flood_fixture_2",
+        "heat": "heat_fixture_2",
+        "wildfire": "wildfire_fixture_2",
+        "wind": "wind_fixture_2"
+      },
+      "provenance": {
+        "cache_key": "123 test ave|san antonio, tx||25",
+        "mode": "offline"
+      },
+      "quality_warnings": [],
+      "source": "climate risk"
+    }
+  ],
+  "ContractorBidAdapter": [
+    {
+      "as_of": "fixture",
+      "confidence": 0.82,
+      "external_id": "123 test ave|san antonio, tx||25::0",
+      "fields": {
+        "cost": "cost_fixture_0",
+        "duration": "duration_fixture_0",
+        "scope": "scope_fixture_0",
+        "trade": "trade_fixture_0"
+      },
+      "provenance": {
+        "cache_key": "123 test ave|san antonio, tx||25",
+        "mode": "offline"
+      },
+      "quality_warnings": [],
+      "source": "contractor bids"
+    },
+    {
+      "as_of": "fixture",
+      "confidence": 0.7899999999999999,
+      "external_id": "123 test ave|san antonio, tx||25::1",
+      "fields": {
+        "cost": "cost_fixture_1",
+        "duration": "duration_fixture_1",
+        "scope": "scope_fixture_1",
+        "trade": "trade_fixture_1"
+      },
+      "provenance": {
+        "cache_key": "123 test ave|san antonio, tx||25",
+        "mode": "offline"
+      },
+      "quality_warnings": [],
+      "source": "contractor bids"
+    },
+    {
+      "as_of": "fixture",
+      "confidence": 0.76,
+      "external_id": "123 test ave|san antonio, tx||25::2",
+      "fields": {
+        "cost": "cost_fixture_2",
+        "duration": "duration_fixture_2",
+        "scope": "scope_fixture_2",
+        "trade": "trade_fixture_2"
+      },
+      "provenance": {
+        "cache_key": "123 test ave|san antonio, tx||25",
+        "mode": "offline"
+      },
+      "quality_warnings": [],
+      "source": "contractor bids"
+    }
+  ],
+  "CountyAssessorAdapter": [
+    {
+      "as_of": "fixture",
+      "confidence": 0.82,
+      "external_id": "123 test ave|san antonio, tx||25::0",
+      "fields": {
+        "assessed_value": 100000,
+        "owner_name": "owner_name_fixture_0",
+        "parcel_id": "parcel_id_fixture_0",
+        "tax_year": "2026-01-01"
+      },
+      "provenance": {
+        "cache_key": "123 test ave|san antonio, tx||25",
+        "mode": "offline"
+      },
+      "quality_warnings": [],
+      "source": "county assessor"
+    },
+    {
+      "as_of": "fixture",
+      "confidence": 0.7899999999999999,
+      "external_id": "123 test ave|san antonio, tx||25::1",
+      "fields": {
+        "assessed_value": 112500,
+        "owner_name": "owner_name_fixture_1",
+        "parcel_id": "parcel_id_fixture_1",
+        "tax_year": "2026-01-01"
+      },
+      "provenance": {
+        "cache_key": "123 test ave|san antonio, tx||25",
+        "mode": "offline"
+      },
+      "quality_warnings": [],
+      "source": "county assessor"
+    },
+    {
+      "as_of": "fixture",
+      "confidence": 0.76,
+      "external_id": "123 test ave|san antonio, tx||25::2",
+      "fields": {
+        "assessed_value": 125000,
+        "owner_name": "owner_name_fixture_2",
+        "parcel_id": "parcel_id_fixture_2",
+        "tax_year": "2026-01-01"
+      },
+      "provenance": {
+        "cache_key": "123 test ave|san antonio, tx||25",
+        "mode": "offline"
+      },
+      "quality_warnings": [],
+      "source": "county assessor"
+    }
+  ],
+  "CountyRecorderAdapter": [
+    {
+      "as_of": "fixture",
+      "confidence": 0.82,
+      "external_id": "123 test ave|san antonio, tx||25::0",
+      "fields": {
+        "deed_date": "2026-01-01",
+        "grantee": "grantee_fixture_0",
+        "grantor": "grantor_fixture_0",
+        "recording_number": "recording_number_fixture_0"
+      },
+      "provenance": {
+        "cache_key": "123 test ave|san antonio, tx||25",
+        "mode": "offline"
+      },
+      "quality_warnings": [],
+      "source": "county recorder"
+    },
+    {
+      "as_of": "fixture",
+      "confidence": 0.7899999999999999,
+      "external_id": "123 test ave|san antonio, tx||25::1",
+      "fields": {
+        "deed_date": "2026-01-01",
+        "grantee": "grantee_fixture_1",
+        "grantor": "grantor_fixture_1",
+        "recording_number": "recording_number_fixture_1"
+      },
+      "provenance": {
+        "cache_key": "123 test ave|san antonio, tx||25",
+        "mode": "offline"
+      },
+      "quality_warnings": [],
+      "source": "county recorder"
+    },
+    {
+      "as_of": "fixture",
+      "confidence": 0.76,
+      "external_id": "123 test ave|san antonio, tx||25::2",
+      "fields": {
+        "deed_date": "2026-01-01",
+        "grantee": "grantee_fixture_2",
+        "grantor": "grantor_fixture_2",
+        "recording_number": "recording_number_fixture_2"
+      },
+      "provenance": {
+        "cache_key": "123 test ave|san antonio, tx||25",
+        "mode": "offline"
+      },
+      "quality_warnings": [],
+      "source": "county recorder"
+    }
+  ],
+  "CrimeDataAdapter": [
+    {
+      "as_of": "fixture",
+      "confidence": 0.82,
+      "external_id": "123 test ave|san antonio, tx||25::0",
+      "fields": {
+        "date": "2026-01-01",
+        "incident_type": "incident_type_fixture_0",
+        "location": "location_fixture_0",
+        "severity": "severity_fixture_0"
+      },
+      "provenance": {
+        "cache_key": "123 test ave|san antonio, tx||25",
+        "mode": "offline"
+      },
+      "quality_warnings": [],
+      "source": "crime data"
+    },
+    {
+      "as_of": "fixture",
+      "confidence": 0.7899999999999999,
+      "external_id": "123 test ave|san antonio, tx||25::1",
+      "fields": {
+        "date": "2026-01-01",
+        "incident_type": "incident_type_fixture_1",
+        "location": "location_fixture_1",
+        "severity": "severity_fixture_1"
+      },
+      "provenance": {
+        "cache_key": "123 test ave|san antonio, tx||25",
+        "mode": "offline"
+      },
+      "quality_warnings": [],
+      "source": "crime data"
+    },
+    {
+      "as_of": "fixture",
+      "confidence": 0.76,
+      "external_id": "123 test ave|san antonio, tx||25::2",
+      "fields": {
+        "date": "2026-01-01",
+        "incident_type": "incident_type_fixture_2",
+        "location": "location_fixture_2",
+        "severity": "severity_fixture_2"
+      },
+      "provenance": {
+        "cache_key": "123 test ave|san antonio, tx||25",
+        "mode": "offline"
+      },
+      "quality_warnings": [],
+      "source": "crime data"
+    }
+  ],
+  "DocumentStorageAdapter": [
+    {
+      "as_of": "fixture",
+      "confidence": 0.82,
+      "external_id": "123 test ave|san antonio, tx||25::0",
+      "fields": {
+        "category": "category_fixture_0",
+        "checksum": "checksum_fixture_0",
+        "document_id": "document_id_fixture_0",
+        "uploaded_at": "uploaded_at_fixture_0"
+      },
+      "provenance": {
+        "cache_key": "123 test ave|san antonio, tx||25",
+        "mode": "offline"
+      },
+      "quality_warnings": [],
+      "source": "document storage"
+    },
+    {
+      "as_of": "fixture",
+      "confidence": 0.7899999999999999,
+      "external_id": "123 test ave|san antonio, tx||25::1",
+      "fields": {
+        "category": "category_fixture_1",
+        "checksum": "checksum_fixture_1",
+        "document_id": "document_id_fixture_1",
+        "uploaded_at": "uploaded_at_fixture_1"
+      },
+      "provenance": {
+        "cache_key": "123 test ave|san antonio, tx||25",
+        "mode": "offline"
+      },
+      "quality_warnings": [],
+      "source": "document storage"
+    },
+    {
+      "as_of": "fixture",
+      "confidence": 0.76,
+      "external_id": "123 test ave|san antonio, tx||25::2",
+      "fields": {
+        "category": "category_fixture_2",
+        "checksum": "checksum_fixture_2",
+        "document_id": "document_id_fixture_2",
+        "uploaded_at": "uploaded_at_fixture_2"
+      },
+      "provenance": {
+        "cache_key": "123 test ave|san antonio, tx||25",
+        "mode": "offline"
+      },
+      "quality_warnings": [],
+      "source": "document storage"
+    }
+  ],
+  "EmploymentAdapter": [
+    {
+      "as_of": "fixture",
+      "confidence": 0.82,
+      "external_id": "123 test ave|san antonio, tx||25::0",
+      "fields": {
+        "industry": "industry_fixture_0",
+        "jobs": "jobs_fixture_0",
+        "unemployment": "unemployment_fixture_0",
+        "wages": "wages_fixture_0"
+      },
+      "provenance": {
+        "cache_key": "123 test ave|san antonio, tx||25",
+        "mode": "offline"
+      },
+      "quality_warnings": [],
+      "source": "employment data"
+    },
+    {
+      "as_of": "fixture",
+      "confidence": 0.7899999999999999,
+      "external_id": "123 test ave|san antonio, tx||25::1",
+      "fields": {
+        "industry": "industry_fixture_1",
+        "jobs": "jobs_fixture_1",
+        "unemployment": "unemployment_fixture_1",
+        "wages": "wages_fixture_1"
+      },
+      "provenance": {
+        "cache_key": "123 test ave|san antonio, tx||25",
+        "mode": "offline"
+      },
+      "quality_warnings": [],
+      "source": "employment data"
+    },
+    {
+      "as_of": "fixture",
+      "confidence": 0.76,
+      "external_id": "123 test ave|san antonio, tx||25::2",
+      "fields": {
+        "industry": "industry_fixture_2",
+        "jobs": "jobs_fixture_2",
+        "unemployment": "unemployment_fixture_2",
+        "wages": "wages_fixture_2"
+      },
+      "provenance": {
+        "cache_key": "123 test ave|san antonio, tx||25",
+        "mode": "offline"
+      },
+      "quality_warnings": [],
+      "source": "employment data"
+    }
+  ],
+  "FloodMapAdapter": [
+    {
+      "as_of": "fixture",
+      "confidence": 0.82,
+      "external_id": "123 test ave|san antonio, tx||25::0",
+      "fields": {
+        "base_flood_elevation": "base_flood_elevation_fixture_0",
+        "effective_date": "2026-01-01",
+        "fema_zone": "fema_zone_fixture_0",
+        "panel": "panel_fixture_0"
+      },
+      "provenance": {
+        "cache_key": "123 test ave|san antonio, tx||25",
+        "mode": "offline"
+      },
+      "quality_warnings": [],
+      "source": "flood maps"
+    },
+    {
+      "as_of": "fixture",
+      "confidence": 0.7899999999999999,
+      "external_id": "123 test ave|san antonio, tx||25::1",
+      "fields": {
+        "base_flood_elevation": "base_flood_elevation_fixture_1",
+        "effective_date": "2026-01-01",
+        "fema_zone": "fema_zone_fixture_1",
+        "panel": "panel_fixture_1"
+      },
+      "provenance": {
+        "cache_key": "123 test ave|san antonio, tx||25",
+        "mode": "offline"
+      },
+      "quality_warnings": [],
+      "source": "flood maps"
+    },
+    {
+      "as_of": "fixture",
+      "confidence": 0.76,
+      "external_id": "123 test ave|san antonio, tx||25::2",
+      "fields": {
+        "base_flood_elevation": "base_flood_elevation_fixture_2",
+        "effective_date": "2026-01-01",
+        "fema_zone": "fema_zone_fixture_2",
+        "panel": "panel_fixture_2"
+      },
+      "provenance": {
+        "cache_key": "123 test ave|san antonio, tx||25",
+        "mode": "offline"
+      },
+      "quality_warnings": [],
+      "source": "flood maps"
+    }
+  ],
+  "GeocoderAdapter": [
+    {
+      "as_of": "fixture",
+      "confidence": 0.82,
+      "external_id": "123 test ave|san antonio, tx||25::0",
+      "fields": {
+        "confidence": 0.05,
+        "latitude": 29.7604,
+        "longitude": -95.3698,
+        "match_type": "match_type_fixture_0"
+      },
+      "provenance": {
+        "cache_key": "123 test ave|san antonio, tx||25",
+        "mode": "offline"
+      },
+      "quality_warnings": [],
+      "source": "geocoding"
+    },
+    {
+      "as_of": "fixture",
+      "confidence": 0.7899999999999999,
+      "external_id": "123 test ave|san antonio, tx||25::1",
+      "fields": {
+        "confidence": 0.06,
+        "latitude": 29.7604,
+        "longitude": -95.3698,
+        "match_type": "match_type_fixture_1"
+      },
+      "provenance": {
+        "cache_key": "123 test ave|san antonio, tx||25",
+        "mode": "offline"
+      },
+      "quality_warnings": [],
+      "source": "geocoding"
+    },
+    {
+      "as_of": "fixture",
+      "confidence": 0.76,
+      "external_id": "123 test ave|san antonio, tx||25::2",
+      "fields": {
+        "confidence": 0.07,
+        "latitude": 29.7604,
+        "longitude": -95.3698,
+        "match_type": "match_type_fixture_2"
+      },
+      "provenance": {
+        "cache_key": "123 test ave|san antonio, tx||25",
+        "mode": "offline"
+      },
+      "quality_warnings": [],
+      "source": "geocoding"
+    }
+  ],
+  "InspectionAdapter": [
+    {
+      "as_of": "fixture",
+      "confidence": 0.82,
+      "external_id": "123 test ave|san antonio, tx||25::0",
+      "fields": {
+        "condition": "condition_fixture_0",
+        "cost": "cost_fixture_0",
+        "severity": "severity_fixture_0",
+        "system": "system_fixture_0"
+      },
+      "provenance": {
+        "cache_key": "123 test ave|san antonio, tx||25",
+        "mode": "offline"
+      },
+      "quality_warnings": [],
+      "source": "inspection reports"
+    },
+    {
+      "as_of": "fixture",
+      "confidence": 0.7899999999999999,
+      "external_id": "123 test ave|san antonio, tx||25::1",
+      "fields": {
+        "condition": "condition_fixture_1",
+        "cost": "cost_fixture_1",
+        "severity": "severity_fixture_1",
+        "system": "system_fixture_1"
+      },
+      "provenance": {
+        "cache_key": "123 test ave|san antonio, tx||25",
+        "mode": "offline"
+      },
+      "quality_warnings": [],
+      "source": "inspection reports"
+    },
+    {
+      "as_of": "fixture",
+      "confidence": 0.76,
+      "external_id": "123 test ave|san antonio, tx||25::2",
+      "fields": {
+        "condition": "condition_fixture_2",
+        "cost": "cost_fixture_2",
+        "severity": "severity_fixture_2",
+        "system": "system_fixture_2"
+      },
+      "provenance": {
+        "cache_key": "123 test ave|san antonio, tx||25",
+        "mode": "offline"
+      },
+      "quality_warnings": [],
+      "source": "inspection reports"
+    }
+  ],
+  "InsuranceQuoteAdapter": [
+    {
+      "as_of": "fixture",
+      "confidence": 0.82,
+      "external_id": "123 test ave|san antonio, tx||25::0",
+      "fields": {
+        "coverage": "coverage_fixture_0",
+        "deductible": "deductible_fixture_0",
+        "exclusions": "exclusions_fixture_0",
+        "premium": 100000
+      },
+      "provenance": {
+        "cache_key": "123 test ave|san antonio, tx||25",
+        "mode": "offline"
+      },
+      "quality_warnings": [],
+      "source": "insurance quotes"
+    },
+    {
+      "as_of": "fixture",
+      "confidence": 0.7899999999999999,
+      "external_id": "123 test ave|san antonio, tx||25::1",
+      "fields": {
+        "coverage": "coverage_fixture_1",
+        "deductible": "deductible_fixture_1",
+        "exclusions": "exclusions_fixture_1",
+        "premium": 112500
+      },
+      "provenance": {
+        "cache_key": "123 test ave|san antonio, tx||25",
+        "mode": "offline"
+      },
+      "quality_warnings": [],
+      "source": "insurance quotes"
+    },
+    {
+      "as_of": "fixture",
+      "confidence": 0.76,
+      "external_id": "123 test ave|san antonio, tx||25::2",
+      "fields": {
+        "coverage": "coverage_fixture_2",
+        "deductible": "deductible_fixture_2",
+        "exclusions": "exclusions_fixture_2",
+        "premium": 125000
+      },
+      "provenance": {
+        "cache_key": "123 test ave|san antonio, tx||25",
+        "mode": "offline"
+      },
+      "quality_warnings": [],
+      "source": "insurance quotes"
+    }
+  ],
+  "LenderQuoteAdapter": [
+    {
+      "as_of": "fixture",
+      "confidence": 0.82,
+      "external_id": "123 test ave|san antonio, tx||25::0",
+      "fields": {
+        "amortization": "amortization_fixture_0",
+        "fees": "fees_fixture_0",
+        "interest_rate": 0.05,
+        "term": "term_fixture_0"
+      },
+      "provenance": {
+        "cache_key": "123 test ave|san antonio, tx||25",
+        "mode": "offline"
+      },
+      "quality_warnings": [],
+      "source": "lender quotes"
+    },
+    {
+      "as_of": "fixture",
+      "confidence": 0.7899999999999999,
+      "external_id": "123 test ave|san antonio, tx||25::1",
+      "fields": {
+        "amortization": "amortization_fixture_1",
+        "fees": "fees_fixture_1",
+        "interest_rate": 0.06,
+        "term": "term_fixture_1"
+      },
+      "provenance": {
+        "cache_key": "123 test ave|san antonio, tx||25",
+        "mode": "offline"
+      },
+      "quality_warnings": [],
+      "source": "lender quotes"
+    },
+    {
+      "as_of": "fixture",
+      "confidence": 0.76,
+      "external_id": "123 test ave|san antonio, tx||25::2",
+      "fields": {
+        "amortization": "amortization_fixture_2",
+        "fees": "fees_fixture_2",
+        "interest_rate": 0.07,
+        "term": "term_fixture_2"
+      },
+      "provenance": {
+        "cache_key": "123 test ave|san antonio, tx||25",
+        "mode": "offline"
+      },
+      "quality_warnings": [],
+      "source": "lender quotes"
+    }
+  ],
+  "PropertyManagementAdapter": [
+    {
+      "as_of": "fixture",
+      "confidence": 0.82,
+      "external_id": "123 test ave|san antonio, tx||25::0",
+      "fields": {
+        "leases": "leases_fixture_0",
+        "ledger": "ledger_fixture_0",
+        "rent_roll": 100000,
+        "work_orders": "work_orders_fixture_0"
+      },
+      "provenance": {
+        "cache_key": "123 test ave|san antonio, tx||25",
+        "mode": "offline"
+      },
+      "quality_warnings": [],
+      "source": "property management"
+    },
+    {
+      "as_of": "fixture",
+      "confidence": 0.7899999999999999,
+      "external_id": "123 test ave|san antonio, tx||25::1",
+      "fields": {
+        "leases": "leases_fixture_1",
+        "ledger": "ledger_fixture_1",
+        "rent_roll": 112500,
+        "work_orders": "work_orders_fixture_1"
+      },
+      "provenance": {
+        "cache_key": "123 test ave|san antonio, tx||25",
+        "mode": "offline"
+      },
+      "quality_warnings": [],
+      "source": "property management"
+    },
+    {
+      "as_of": "fixture",
+      "confidence": 0.76,
+      "external_id": "123 test ave|san antonio, tx||25::2",
+      "fields": {
+        "leases": "leases_fixture_2",
+        "ledger": "ledger_fixture_2",
+        "rent_roll": 125000,
+        "work_orders": "work_orders_fixture_2"
+      },
+      "provenance": {
+        "cache_key": "123 test ave|san antonio, tx||25",
+        "mode": "offline"
+      },
+      "quality_warnings": [],
+      "source": "property management"
+    }
+  ],
+  "RentListingAdapter": [
+    {
+      "as_of": "fixture",
+      "confidence": 0.82,
+      "external_id": "123 test ave|san antonio, tx||25::0",
+      "fields": {
+        "asking_rent": 100000,
+        "bathrooms": "bathrooms_fixture_0",
+        "bedrooms": "bedrooms_fixture_0",
+        "days_on_market": "days_on_market_fixture_0"
+      },
+      "provenance": {
+        "cache_key": "123 test ave|san antonio, tx||25",
+        "mode": "offline"
+      },
+      "quality_warnings": [],
+      "source": "rent listings"
+    },
+    {
+      "as_of": "fixture",
+      "confidence": 0.7899999999999999,
+      "external_id": "123 test ave|san antonio, tx||25::1",
+      "fields": {
+        "asking_rent": 112500,
+        "bathrooms": "bathrooms_fixture_1",
+        "bedrooms": "bedrooms_fixture_1",
+        "days_on_market": "days_on_market_fixture_1"
+      },
+      "provenance": {
+        "cache_key": "123 test ave|san antonio, tx||25",
+        "mode": "offline"
+      },
+      "quality_warnings": [],
+      "source": "rent listings"
+    },
+    {
+      "as_of": "fixture",
+      "confidence": 0.76,
+      "external_id": "123 test ave|san antonio, tx||25::2",
+      "fields": {
+        "asking_rent": 125000,
+        "bathrooms": "bathrooms_fixture_2",
+        "bedrooms": "bedrooms_fixture_2",
+        "days_on_market": "days_on_market_fixture_2"
+      },
+      "provenance": {
+        "cache_key": "123 test ave|san antonio, tx||25",
+        "mode": "offline"
+      },
+      "quality_warnings": [],
+      "source": "rent listings"
+    }
+  ],
+  "SaleListingAdapter": [
+    {
+      "as_of": "fixture",
+      "confidence": 0.82,
+      "external_id": "123 test ave|san antonio, tx||25::0",
+      "fields": {
+        "asking_price": 100000,
+        "close_date": "2026-01-01",
+        "days_on_market": "days_on_market_fixture_0",
+        "sale_price": 100000
+      },
+      "provenance": {
+        "cache_key": "123 test ave|san antonio, tx||25",
+        "mode": "offline"
+      },
+      "quality_warnings": [],
+      "source": "sale listings"
+    },
+    {
+      "as_of": "fixture",
+      "confidence": 0.7899999999999999,
+      "external_id": "123 test ave|san antonio, tx||25::1",
+      "fields": {
+        "asking_price": 112500,
+        "close_date": "2026-01-01",
+        "days_on_market": "days_on_market_fixture_1",
+        "sale_price": 112500
+      },
+      "provenance": {
+        "cache_key": "123 test ave|san antonio, tx||25",
+        "mode": "offline"
+      },
+      "quality_warnings": [],
+      "source": "sale listings"
+    },
+    {
+      "as_of": "fixture",
+      "confidence": 0.76,
+      "external_id": "123 test ave|san antonio, tx||25::2",
+      "fields": {
+        "asking_price": 125000,
+        "close_date": "2026-01-01",
+        "days_on_market": "days_on_market_fixture_2",
+        "sale_price": 125000
+      },
+      "provenance": {
+        "cache_key": "123 test ave|san antonio, tx||25",
+        "mode": "offline"
+      },
+      "quality_warnings": [],
+      "source": "sale listings"
+    }
+  ],
+  "SchoolDataAdapter": [
+    {
+      "as_of": "fixture",
+      "confidence": 0.82,
+      "external_id": "123 test ave|san antonio, tx||25::0",
+      "fields": {
+        "assignment": "assignment_fixture_0",
+        "distance": "distance_fixture_0",
+        "rating": 6,
+        "school_name": "school_name_fixture_0"
+      },
+      "provenance": {
+        "cache_key": "123 test ave|san antonio, tx||25",
+        "mode": "offline"
+      },
+      "quality_warnings": [],
+      "source": "school data"
+    },
+    {
+      "as_of": "fixture",
+      "confidence": 0.7899999999999999,
+      "external_id": "123 test ave|san antonio, tx||25::1",
+      "fields": {
+        "assignment": "assignment_fixture_1",
+        "distance": "distance_fixture_1",
+        "rating": 7,
+        "school_name": "school_name_fixture_1"
+      },
+      "provenance": {
+        "cache_key": "123 test ave|san antonio, tx||25",
+        "mode": "offline"
+      },
+      "quality_warnings": [],
+      "source": "school data"
+    },
+    {
+      "as_of": "fixture",
+      "confidence": 0.76,
+      "external_id": "123 test ave|san antonio, tx||25::2",
+      "fields": {
+        "assignment": "assignment_fixture_2",
+        "distance": "distance_fixture_2",
+        "rating": 8,
+        "school_name": "school_name_fixture_2"
+      },
+      "provenance": {
+        "cache_key": "123 test ave|san antonio, tx||25",
+        "mode": "offline"
+      },
+      "quality_warnings": [],
+      "source": "school data"
+    }
+  ],
+  "TitleAdapter": [
+    {
+      "as_of": "fixture",
+      "confidence": 0.82,
+      "external_id": "123 test ave|san antonio, tx||25::0",
+      "fields": {
+        "easements": "easements_fixture_0",
+        "exceptions": "exceptions_fixture_0",
+        "liens": "liens_fixture_0",
+        "vesting": "vesting_fixture_0"
+      },
+      "provenance": {
+        "cache_key": "123 test ave|san antonio, tx||25",
+        "mode": "offline"
+      },
+      "quality_warnings": [],
+      "source": "title commitment"
+    },
+    {
+      "as_of": "fixture",
+      "confidence": 0.7899999999999999,
+      "external_id": "123 test ave|san antonio, tx||25::1",
+      "fields": {
+        "easements": "easements_fixture_1",
+        "exceptions": "exceptions_fixture_1",
+        "liens": "liens_fixture_1",
+        "vesting": "vesting_fixture_1"
+      },
+      "provenance": {
+        "cache_key": "123 test ave|san antonio, tx||25",
+        "mode": "offline"
+      },
+      "quality_warnings": [],
+      "source": "title commitment"
+    },
+    {
+      "as_of": "fixture",
+      "confidence": 0.76,
+      "external_id": "123 test ave|san antonio, tx||25::2",
+      "fields": {
+        "easements": "easements_fixture_2",
+        "exceptions": "exceptions_fixture_2",
+        "liens": "liens_fixture_2",
+        "vesting": "vesting_fixture_2"
+      },
+      "provenance": {
+        "cache_key": "123 test ave|san antonio, tx||25",
+        "mode": "offline"
+      },
+      "quality_warnings": [],
+      "source": "title commitment"
+    }
+  ],
+  "ZoningAdapter": [
+    {
+      "as_of": "fixture",
+      "confidence": 0.82,
+      "external_id": "123 test ave|san antonio, tx||25::0",
+      "fields": {
+        "density": "density_fixture_0",
+        "district": "district_fixture_0",
+        "parking": "parking_fixture_0",
+        "use": "use_fixture_0"
+      },
+      "provenance": {
+        "cache_key": "123 test ave|san antonio, tx||25",
+        "mode": "offline"
+      },
+      "quality_warnings": [],
+      "source": "zoning data"
+    },
+    {
+      "as_of": "fixture",
+      "confidence": 0.7899999999999999,
+      "external_id": "123 test ave|san antonio, tx||25::1",
+      "fields": {
+        "density": "density_fixture_1",
+        "district": "district_fixture_1",
+        "parking": "parking_fixture_1",
+        "use": "use_fixture_1"
+      },
+      "provenance": {
+        "cache_key": "123 test ave|san antonio, tx||25",
+        "mode": "offline"
+      },
+      "quality_warnings": [],
+      "source": "zoning data"
+    },
+    {
+      "as_of": "fixture",
+      "confidence": 0.76,
+      "external_id": "123 test ave|san antonio, tx||25::2",
+      "fields": {
+        "density": "density_fixture_2",
+        "district": "district_fixture_2",
+        "parking": "parking_fixture_2",
+        "use": "use_fixture_2"
+      },
+      "provenance": {
+        "cache_key": "123 test ave|san antonio, tx||25",
+        "mode": "offline"
+      },
+      "quality_warnings": [],
+      "source": "zoning data"
+    }
+  ]
+}

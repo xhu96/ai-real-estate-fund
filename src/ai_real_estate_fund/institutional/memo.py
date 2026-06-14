@@ -1,0 +1,128 @@
+from __future__ import annotations
+
+from .agents.specs import AGENT_SPECS
+from .models import GateSeverity, InstitutionalDecision
+
+
+def _money(value: float) -> str:
+    return f"${value:,.0f}"
+
+
+def _pct(value: float) -> str:
+    return f"{value:.1%}"
+
+
+def render_institutional_memo(decision: InstitutionalDecision) -> str:
+    prop = decision.property
+    metrics = decision.metrics
+    lines: list[str] = []
+    lines.append(f"# Institutional Investment Committee Memo: {prop.name}")
+    lines.append("")
+    lines.append(f"**Recommendation:** {decision.recommendation.value}")
+    lines.append(f"**Overall score:** {decision.overall_score:.1f}/100")
+    lines.append(f"**Run ID:** `{decision.run_id}`")
+    lines.append("")
+    lines.append("## Property")
+    lines.append(f"- Address: {prop.address}")
+    lines.append(f"- Market: {prop.market}")
+    lines.append(f"- Property type: {prop.property_type}")
+    lines.append(f"- Units: {prop.unit_count}")
+    lines.append(f"- Purchase price: {_money(prop.purchase_price)}")
+    lines.append(f"- Total project cost: {_money(metrics.total_project_cost)}")
+    lines.append("")
+    lines.append("## Core Underwriting")
+    lines.append("| Metric | Value |")
+    lines.append("|---|---:|")
+    lines.append(f"| NOI | {_money(metrics.noi)} |")
+    lines.append(f"| Cap rate | {_pct(metrics.cap_rate)} |")
+    lines.append(f"| Cash-on-cash | {_pct(metrics.cash_on_cash_return)} |")
+    lines.append(f"| DSCR | {metrics.dscr:.2f}x |")
+    lines.append(f"| Break-even occupancy | {_pct(metrics.break_even_occupancy)} |")
+    lines.append(f"| Loan-to-cost | {_pct(metrics.loan_to_cost)} |")
+    lines.append("")
+    lines.append("## Scorecards")
+    for scorecard in decision.scorecards:
+        lines.append(f"### {scorecard.name}: {scorecard.weighted_score():.1f}/100")
+        for factor in sorted(scorecard.factors, key=lambda item: item.score)[:5]:
+            lines.append(f"- **{factor.name}:** {factor.score:.1f}/100 — {factor.explanation}")
+    lines.append("")
+    lines.append("## Policy Gates")
+    lines.append("| Gate | Status | Severity | Value | Message |")
+    lines.append("|---|---:|---:|---:|---|")
+    for result in decision.policy_results:
+        status = "PASS" if result.passed else "FAIL"
+        lines.append(f"| {result.limit.name} | {status} | {result.severity.value} | {result.value:.4g} | {result.message} |")
+    lines.append("")
+    lines.append("## Data Room")
+    lines.append(f"Completeness score: **{decision.data_room.completeness_score():.1f}/100**")
+    missing = decision.data_room.missing_required_documents()
+    if missing:
+        lines.append("Missing required documents:")
+        for doc in missing[:12]:
+            lines.append(f"- {doc.name}")
+    else:
+        lines.append("No required documents are missing from the inferred data room.")
+    lines.append("")
+    lines.append("## Capital Stack")
+    lines.append("| Layer | Amount | Priority | Cost | Notes |")
+    lines.append("|---|---:|---:|---:|---|")
+    for layer in decision.capital_stack:
+        lines.append(f"| {layer.name} | {_money(layer.amount)} | {layer.priority} | {_pct(layer.coupon_or_required_return)} | {layer.notes} |")
+    lines.append("")
+    lines.append("## Operating Plan")
+    lines.append("| Year | EGI | NOI | Debt Service | DSCR | Cash Flow | Value |")
+    lines.append("|---:|---:|---:|---:|---:|---:|---:|")
+    for year in decision.operating_plan:
+        lines.append(f"| {year.year} | {_money(year.effective_gross_income)} | {_money(year.noi)} | {_money(year.debt_service)} | {year.debt_service_coverage():.2f}x | {_money(year.cash_flow_before_tax)} | {_money(year.projected_asset_value)} |")
+    lines.append("")
+    lines.append("## Risk Register")
+    for risk in decision.risk_register:
+        lines.append(f"- **{risk.name}** ({risk.severity}/{risk.probability}): {risk.mitigation}")
+    lines.append("")
+    lines.append("## Committee Minutes")
+    for minute in decision.committee_minutes:
+        lines.append(f"- **{minute.stage.value} / {minute.speaker}:** {minute.summary} _Decision: {minute.decision}._")
+    lines.append("")
+    lines.append("## Thesis")
+    lines.append(decision.thesis)
+    lines.append("")
+    lines.append("## Bear Case")
+    lines.append(decision.bear_case)
+    lines.append("")
+    lines.append("## Next Steps")
+    for step in decision.next_steps:
+        lines.append(f"- {step}")
+    lines.append("")
+    hard_stops = [result for result in decision.policy_results if not result.passed and result.severity == GateSeverity.HARD_STOP]
+    if hard_stops:
+        lines.append("## Hard Stops")
+        for result in hard_stops:
+            lines.append(f"- {result.message} {result.remediation}")
+        lines.append("")
+    if decision.llm_review is not None and decision.llm_review.opinions:
+        lines.append("## Analyst Commentary (LLM)")
+        lines.append(f"_Generated by `{decision.llm_review.model}` over the committee's deterministic findings; scores above are not model-generated._")
+        lines.append("")
+        for opinion in decision.llm_review.opinions:
+            lines.append(f"### {opinion.analyst}")
+            lines.append(opinion.thesis)
+            for point in opinion.key_points:
+                lines.append(f"- {point}")
+            if opinion.questions:
+                lines.append("")
+                lines.append("Open questions:")
+                for question in opinion.questions:
+                    lines.append(f"- {question}")
+            lines.append("")
+        if decision.llm_review.errors:
+            lines.append("_Analyst errors: " + "; ".join(decision.llm_review.errors) + "_")
+            lines.append("")
+    methodology_sources = sorted({source for spec in AGENT_SPECS for source in spec.sources})
+    if methodology_sources:
+        lines.append("## Methodology Sources")
+        lines.append("Workstream thresholds and review language are grounded in the following published standards and references (cited by name; no copyrighted text is reproduced):")
+        for source in methodology_sources:
+            lines.append(f"- {source}")
+        lines.append("")
+    lines.append(f"> {decision.disclaimer}")
+    return "\n".join(lines) + "\n"

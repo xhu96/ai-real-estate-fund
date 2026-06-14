@@ -1,0 +1,91 @@
+name: release
+# Push a version tag to cut a release:  git tag v0.7.0 && git push origin v0.7.0
+# Or run manually via "Run workflow" and pass an existing tag.
+#
+# Produces a GitHub Release with:
+#   - ai-real-estate-fund-<version>.zip  (curated, turnkey: source + pre-built SPA)
+#   - the pip wheel + sdist               (python -m build)
+#   - release-manifest.json               (SHA-256 integrity manifest)
+#   - "Source code (zip/tar.gz)"          (auto-attached by GitHub from the tag)
+on:
+  push:
+    tags: ['v*']
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Existing tag to release (e.g. v0.7.0)'
+        required: true
+
+permissions:
+  contents: write  # required for GITHUB_TOKEN to create the Release + upload assets
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.inputs.tag || github.ref }}
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Resolve version and assert tag matches pyproject
+        env:
+          # Pass via env (not inline ${{ }}) so an attacker-crafted tag can't inject shell.
+          TAG_INPUT: ${{ github.event.inputs.tag }}
+          REF_NAME: ${{ github.ref_name }}
+        run: |
+          set -euo pipefail
+          PYPROJECT_VERSION="$(grep -m1 -E '^version[[:space:]]*=' pyproject.toml | sed -E 's/^version[[:space:]]*=[[:space:]]*"([^"]+)".*/\1/')"
+          RELEASE_TAG="${TAG_INPUT:-$REF_NAME}"
+          TAG_VERSION="${RELEASE_TAG#v}"
+          echo "PYPROJECT_VERSION=$PYPROJECT_VERSION" >> "$GITHUB_ENV"
+          echo "RELEASE_TAG=$RELEASE_TAG" >> "$GITHUB_ENV"
+          if [ "$TAG_VERSION" != "$PYPROJECT_VERSION" ]; then
+            echo "::error::Tag $RELEASE_TAG ($TAG_VERSION) != pyproject version $PYPROJECT_VERSION. Bump pyproject.toml or fix the tag."
+            exit 1
+          fi
+          echo "Releasing $RELEASE_TAG (version $PYPROJECT_VERSION)"
+
+      - name: Install and run the full test gate
+        run: |
+          python -m pip install -e ".[api,dev]"
+          python -m compileall -q src app/backend tests
+          python -m pytest -q
+          APP_ENV=ci python -m ai_real_estate_fund readiness --json --strict
+          python scripts/smoke_test.py
+
+      - name: Build the frontend (for the turnkey single-server zip)
+        working-directory: app/frontend
+        run: |
+          npm ci
+          npm run build
+
+      - name: Build Python wheel + sdist
+        run: python -m build
+
+      - name: Generate release manifest
+        run: python scripts/release_manifest.py --version "$PYPROJECT_VERSION" --out dist/release-manifest.json
+
+      - name: Assemble curated release zip
+        env:
+          SKIP_FRONTEND_BUILD: '1'  # already built above
+        run: bash scripts/make_release_zip.sh "$PYPROJECT_VERSION"
+
+      - name: Publish GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ env.RELEASE_TAG }}
+          generate_release_notes: true
+          fail_on_unmatched_files: true
+          files: |
+            dist/ai-real-estate-fund-*.zip
+            dist/*.whl
+            dist/*.tar.gz
+            dist/release-manifest.json

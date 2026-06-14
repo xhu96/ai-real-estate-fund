@@ -1,0 +1,692 @@
+{
+  "BusinessPlanMilestoneMonitor": {
+    "action_items": [
+      "Continue monitoring business-plan milestones on the standard reporting cadence."
+    ],
+    "asset_name": "Sunbelt Duplex",
+    "health_score": 100.0,
+    "kpis": [
+      {
+        "actual": 0.99,
+        "in_tolerance": true,
+        "name": "business-plan milestones",
+        "notes": "completed milestones versus approved plan",
+        "owner": "asset_manager",
+        "target": 1.0,
+        "tolerance": 0.1,
+        "unit": "ratio",
+        "variance": -0.010000000000000009,
+        "variance_pct": -0.010000000000000009
+      }
+    ],
+    "period": "Month 1",
+    "watch_items": []
+  },
+  "CapexBudgetMonitor": {
+    "action_items": [
+      "Continue monitoring capex budget on the standard reporting cadence."
+    ],
+    "asset_name": "Sunbelt Duplex",
+    "health_score": 100.0,
+    "kpis": [
+      {
+        "actual": 0.99,
+        "in_tolerance": true,
+        "name": "capex budget",
+        "notes": "capex spend versus approved budget",
+        "owner": "construction_manager",
+        "target": 1.0,
+        "tolerance": 0.1,
+        "unit": "ratio",
+        "variance": -0.010000000000000009,
+        "variance_pct": -0.010000000000000009
+      }
+    ],
+    "period": "Month 1",
+    "watch_items": []
+  },
+  "CollectionsMonitor": {
+    "action_items": [
+      "Continue monitoring collections on the standard reporting cadence."
+    ],
+    "asset_name": "Sunbelt Duplex",
+    "health_score": 100.0,
+    "kpis": [
+      {
+        "actual": 0.96,
+        "in_tolerance": true,
+        "name": "collections",
+        "notes": "cash collected against tenant ledger",
+        "owner": "property_manager",
+        "target": 1.0,
+        "tolerance": 0.1,
+        "unit": "ratio",
+        "variance": -0.040000000000000036,
+        "variance_pct": -0.040000000000000036
+      }
+    ],
+    "period": "Month 1",
+    "watch_items": []
+  },
+  "ComplianceCalendarMonitor": {
+    "action_items": [
+      "Continue monitoring compliance calendar on the standard reporting cadence."
+    ],
+    "asset_name": "Sunbelt Duplex",
+    "health_score": 100.0,
+    "kpis": [
+      {
+        "actual": 0.99,
+        "in_tolerance": true,
+        "name": "compliance calendar",
+        "notes": "licenses, inspections, and filings",
+        "owner": "compliance_lead",
+        "target": 1.0,
+        "tolerance": 0.1,
+        "unit": "ratio",
+        "variance": -0.010000000000000009,
+        "variance_pct": -0.010000000000000009
+      }
+    ],
+    "period": "Month 1",
+    "watch_items": []
+  },
+  "CovenantComplianceMonitor": {
+    "action_items": [
+      "Continue monitoring covenant compliance on the standard reporting cadence."
+    ],
+    "asset_name": "Sunbelt Duplex",
+    "health_score": 100.0,
+    "kpis": [
+      {
+        "actual": 1.4683,
+        "in_tolerance": true,
+        "name": "covenant compliance",
+        "notes": "lender covenant headroom",
+        "owner": "debt_asset_manager",
+        "target": 1.4832,
+        "tolerance": 0.1,
+        "unit": "ratio",
+        "variance": -0.014900000000000135,
+        "variance_pct": -0.010045846817691568
+      }
+    ],
+    "period": "Month 1",
+    "watch_items": []
+  },
+  "DelinquencyMonitor": {
+    "action_items": [
+      "Continue monitoring delinquency on the standard reporting cadence."
+    ],
+    "asset_name": "Sunbelt Duplex",
+    "health_score": 100.0,
+    "kpis": [
+      {
+        "actual": 1.08,
+        "in_tolerance": true,
+        "name": "delinquency",
+        "notes": "past-due balance as a share of monthly rent",
+        "owner": "property_manager",
+        "target": 1.0,
+        "tolerance": 0.1,
+        "unit": "ratio",
+        "variance": 0.08000000000000007,
+        "variance_pct": 0.08000000000000007
+      }
+    ],
+    "period": "Month 1",
+    "watch_items": []
+  },
+  "DscrMonitor": {
+    "action_items": [
+      "Continue monitoring DSCR on the standard reporting cadence."
+    ],
+    "asset_name": "Sunbelt Duplex",
+    "health_score": 100.0,
+    "kpis": [
+      {
+        "actual": 1.4683,
+        "in_tolerance": true,
+        "name": "DSCR",
+        "notes": "NOI divided by debt service",
+        "owner": "debt_asset_manager",
+        "target": 1.4832,
+        "tolerance": 0.1,
+        "unit": "ratio",
+        "variance": -0.014900000000000135,
+        "variance_pct": -0.010045846817691568
+      }
+    ],
+    "period": "Month 1",
+    "watch_items": []
+  },
+  "EconomicOccupancyMonitor": {
+    "action_items": [
+      "Continue monitoring economic occupancy on the standard reporting cadence."
+    ],
+    "asset_name": "Sunbelt Duplex",
+    "health_score": 100.0,
+    "kpis": [
+      {
+        "actual": 0.9306,
+        "in_tolerance": true,
+        "name": "economic occupancy",
+        "notes": "collected rent divided by scheduled rent",
+        "owner": "asset_manager",
+        "target": 0.94,
+        "tolerance": 0.1,
+        "unit": "ratio",
+        "variance": -0.009399999999999964,
+        "variance_pct": -0.009999999999999962
+      }
+    ],
+    "period": "Month 1",
+    "watch_items": []
+  },
+  "ExitReadinessMonitor": {
+    "action_items": [
+      "Continue monitoring exit readiness on the standard reporting cadence."
+    ],
+    "asset_name": "Sunbelt Duplex",
+    "health_score": 100.0,
+    "kpis": [
+      {
+        "actual": 0.99,
+        "in_tolerance": true,
+        "name": "exit readiness",
+        "notes": "materials required for sale/refi process",
+        "owner": "portfolio_manager",
+        "target": 1.0,
+        "tolerance": 0.1,
+        "unit": "ratio",
+        "variance": -0.010000000000000009,
+        "variance_pct": -0.010000000000000009
+      }
+    ],
+    "period": "Month 1",
+    "watch_items": []
+  },
+  "ExpenseVarianceMonitor": {
+    "action_items": [
+      "Continue monitoring expense variance on the standard reporting cadence."
+    ],
+    "asset_name": "Sunbelt Duplex",
+    "health_score": 100.0,
+    "kpis": [
+      {
+        "actual": 0.99,
+        "in_tolerance": true,
+        "name": "expense variance",
+        "notes": "actual controllable expenses versus budget",
+        "owner": "controller",
+        "target": 1.0,
+        "tolerance": 0.1,
+        "unit": "ratio",
+        "variance": -0.010000000000000009,
+        "variance_pct": -0.010000000000000009
+      }
+    ],
+    "period": "Month 1",
+    "watch_items": []
+  },
+  "InsuranceClaimMonitor": {
+    "action_items": [
+      "Continue monitoring insurance claims on the standard reporting cadence."
+    ],
+    "asset_name": "Sunbelt Duplex",
+    "health_score": 100.0,
+    "kpis": [
+      {
+        "actual": 0.99,
+        "in_tolerance": true,
+        "name": "insurance claims",
+        "notes": "claim frequency and retained losses",
+        "owner": "risk_manager",
+        "target": 1.0,
+        "tolerance": 0.1,
+        "unit": "ratio",
+        "variance": -0.010000000000000009,
+        "variance_pct": -0.010000000000000009
+      }
+    ],
+    "period": "Month 1",
+    "watch_items": []
+  },
+  "InvestorReportingMonitor": {
+    "action_items": [
+      "Continue monitoring investor reporting on the standard reporting cadence."
+    ],
+    "asset_name": "Sunbelt Duplex",
+    "health_score": 100.0,
+    "kpis": [
+      {
+        "actual": 0.99,
+        "in_tolerance": true,
+        "name": "investor reporting",
+        "notes": "investor package timeliness and quality",
+        "owner": "investor_relations",
+        "target": 1.0,
+        "tolerance": 0.1,
+        "unit": "ratio",
+        "variance": -0.010000000000000009,
+        "variance_pct": -0.010000000000000009
+      }
+    ],
+    "period": "Month 1",
+    "watch_items": []
+  },
+  "LeasingVelocityMonitor": {
+    "action_items": [
+      "Continue monitoring leasing velocity on the standard reporting cadence."
+    ],
+    "asset_name": "Sunbelt Duplex",
+    "health_score": 100.0,
+    "kpis": [
+      {
+        "actual": 3663.0,
+        "in_tolerance": true,
+        "name": "leasing velocity",
+        "notes": "new leases signed per available unit",
+        "owner": "leasing_manager",
+        "target": 3700,
+        "tolerance": 0.1,
+        "unit": "ratio",
+        "variance": -37.0,
+        "variance_pct": -0.01
+      }
+    ],
+    "period": "Month 1",
+    "watch_items": []
+  },
+  "LenderReportingMonitor": {
+    "action_items": [
+      "Continue monitoring lender reporting on the standard reporting cadence."
+    ],
+    "asset_name": "Sunbelt Duplex",
+    "health_score": 100.0,
+    "kpis": [
+      {
+        "actual": 0.99,
+        "in_tolerance": true,
+        "name": "lender reporting",
+        "notes": "reporting package timeliness",
+        "owner": "controller",
+        "target": 1.0,
+        "tolerance": 0.1,
+        "unit": "ratio",
+        "variance": -0.010000000000000009,
+        "variance_pct": -0.010000000000000009
+      }
+    ],
+    "period": "Month 1",
+    "watch_items": []
+  },
+  "MaintenanceSlaMonitor": {
+    "action_items": [
+      "Continue monitoring maintenance SLA on the standard reporting cadence."
+    ],
+    "asset_name": "Sunbelt Duplex",
+    "health_score": 100.0,
+    "kpis": [
+      {
+        "actual": 0.99,
+        "in_tolerance": true,
+        "name": "maintenance SLA",
+        "notes": "work orders completed within SLA",
+        "owner": "maintenance_lead",
+        "target": 1.0,
+        "tolerance": 0.1,
+        "unit": "ratio",
+        "variance": -0.010000000000000009,
+        "variance_pct": -0.010000000000000009
+      }
+    ],
+    "period": "Month 1",
+    "watch_items": []
+  },
+  "ManagerScorecardMonitor": {
+    "action_items": [
+      "Continue monitoring manager scorecard on the standard reporting cadence."
+    ],
+    "asset_name": "Sunbelt Duplex",
+    "health_score": 100.0,
+    "kpis": [
+      {
+        "actual": 0.99,
+        "in_tolerance": true,
+        "name": "manager scorecard",
+        "notes": "operator KPI scorecard",
+        "owner": "portfolio_manager",
+        "target": 1.0,
+        "tolerance": 0.1,
+        "unit": "ratio",
+        "variance": -0.010000000000000009,
+        "variance_pct": -0.010000000000000009
+      }
+    ],
+    "period": "Month 1",
+    "watch_items": []
+  },
+  "NoiVarianceMonitor": {
+    "action_items": [
+      "Continue monitoring NOI variance on the standard reporting cadence."
+    ],
+    "asset_name": "Sunbelt Duplex",
+    "health_score": 100.0,
+    "kpis": [
+      {
+        "actual": 25242.1488,
+        "in_tolerance": true,
+        "name": "NOI variance",
+        "notes": "actual NOI versus budget",
+        "owner": "asset_manager",
+        "target": 25497.12,
+        "tolerance": 0.1,
+        "unit": "ratio",
+        "variance": -254.97119999999995,
+        "variance_pct": -0.009999999999999998
+      }
+    ],
+    "period": "Month 1",
+    "watch_items": []
+  },
+  "OccupancyMonitor": {
+    "action_items": [
+      "Continue monitoring occupancy on the standard reporting cadence."
+    ],
+    "asset_name": "Sunbelt Duplex",
+    "health_score": 100.0,
+    "kpis": [
+      {
+        "actual": 0.9306,
+        "in_tolerance": true,
+        "name": "occupancy",
+        "notes": "occupied units divided by rentable units",
+        "owner": "leasing_manager",
+        "target": 0.94,
+        "tolerance": 0.1,
+        "unit": "ratio",
+        "variance": -0.009399999999999964,
+        "variance_pct": -0.009999999999999962
+      }
+    ],
+    "period": "Month 1",
+    "watch_items": []
+  },
+  "OnlineReputationMonitor": {
+    "action_items": [
+      "Continue monitoring online reputation on the standard reporting cadence."
+    ],
+    "asset_name": "Sunbelt Duplex",
+    "health_score": 100.0,
+    "kpis": [
+      {
+        "actual": 0.99,
+        "in_tolerance": true,
+        "name": "online reputation",
+        "notes": "reviews and response cadence",
+        "owner": "property_manager",
+        "target": 1.0,
+        "tolerance": 0.1,
+        "unit": "ratio",
+        "variance": -0.010000000000000009,
+        "variance_pct": -0.010000000000000009
+      }
+    ],
+    "period": "Month 1",
+    "watch_items": []
+  },
+  "RenewalMonitor": {
+    "action_items": [
+      "Continue monitoring renewals on the standard reporting cadence."
+    ],
+    "asset_name": "Sunbelt Duplex",
+    "health_score": 100.0,
+    "kpis": [
+      {
+        "actual": 0.96,
+        "in_tolerance": true,
+        "name": "renewals",
+        "notes": "expiring leases converted to renewals",
+        "owner": "leasing_manager",
+        "target": 1.0,
+        "tolerance": 0.1,
+        "unit": "ratio",
+        "variance": -0.040000000000000036,
+        "variance_pct": -0.040000000000000036
+      }
+    ],
+    "period": "Month 1",
+    "watch_items": []
+  },
+  "RenovationDrawMonitor": {
+    "action_items": [
+      "Continue monitoring renovation draws on the standard reporting cadence."
+    ],
+    "asset_name": "Sunbelt Duplex",
+    "health_score": 100.0,
+    "kpis": [
+      {
+        "actual": 0.99,
+        "in_tolerance": true,
+        "name": "renovation draws",
+        "notes": "draws funded versus completion milestones",
+        "owner": "construction_manager",
+        "target": 1.0,
+        "tolerance": 0.1,
+        "unit": "ratio",
+        "variance": -0.010000000000000009,
+        "variance_pct": -0.010000000000000009
+      }
+    ],
+    "period": "Month 1",
+    "watch_items": []
+  },
+  "RentCompRefreshMonitor": {
+    "action_items": [
+      "Continue monitoring rent comp refresh on the standard reporting cadence."
+    ],
+    "asset_name": "Sunbelt Duplex",
+    "health_score": 100.0,
+    "kpis": [
+      {
+        "actual": 3663.0,
+        "in_tolerance": true,
+        "name": "rent comp refresh",
+        "notes": "freshness of rent comp evidence",
+        "owner": "research_lead",
+        "target": 3700,
+        "tolerance": 0.1,
+        "unit": "ratio",
+        "variance": -37.0,
+        "variance_pct": -0.01
+      }
+    ],
+    "period": "Month 1",
+    "watch_items": []
+  },
+  "RentGrowthMonitor": {
+    "action_items": [
+      "Continue monitoring rent growth on the standard reporting cadence."
+    ],
+    "asset_name": "Sunbelt Duplex",
+    "health_score": 100.0,
+    "kpis": [
+      {
+        "actual": 3663.0,
+        "in_tolerance": true,
+        "name": "rent growth",
+        "notes": "achieved rents versus underwritten rents",
+        "owner": "asset_manager",
+        "target": 3700,
+        "tolerance": 0.1,
+        "unit": "ratio",
+        "variance": -37.0,
+        "variance_pct": -0.01
+      }
+    ],
+    "period": "Month 1",
+    "watch_items": []
+  },
+  "ReserveBalanceMonitor": {
+    "action_items": [
+      "Continue monitoring reserve balance on the standard reporting cadence."
+    ],
+    "asset_name": "Sunbelt Duplex",
+    "health_score": 100.0,
+    "kpis": [
+      {
+        "actual": 0.99,
+        "in_tolerance": true,
+        "name": "reserve balance",
+        "notes": "available reserves versus policy minimum",
+        "owner": "controller",
+        "target": 1.0,
+        "tolerance": 0.1,
+        "unit": "ratio",
+        "variance": -0.010000000000000009,
+        "variance_pct": -0.010000000000000009
+      }
+    ],
+    "period": "Month 1",
+    "watch_items": []
+  },
+  "ResidentSatisfactionMonitor": {
+    "action_items": [
+      "Continue monitoring resident satisfaction on the standard reporting cadence."
+    ],
+    "asset_name": "Sunbelt Duplex",
+    "health_score": 100.0,
+    "kpis": [
+      {
+        "actual": 0.96,
+        "in_tolerance": true,
+        "name": "resident satisfaction",
+        "notes": "survey and work-order quality signals",
+        "owner": "property_manager",
+        "target": 1.0,
+        "tolerance": 0.1,
+        "unit": "ratio",
+        "variance": -0.040000000000000036,
+        "variance_pct": -0.040000000000000036
+      }
+    ],
+    "period": "Month 1",
+    "watch_items": []
+  },
+  "SafetyIncidentMonitor": {
+    "action_items": [
+      "Continue monitoring safety incidents on the standard reporting cadence."
+    ],
+    "asset_name": "Sunbelt Duplex",
+    "health_score": 100.0,
+    "kpis": [
+      {
+        "actual": 1.08,
+        "in_tolerance": true,
+        "name": "safety incidents",
+        "notes": "incidents per occupied unit",
+        "owner": "risk_manager",
+        "target": 1.0,
+        "tolerance": 0.1,
+        "unit": "ratio",
+        "variance": 0.08000000000000007,
+        "variance_pct": 0.08000000000000007
+      }
+    ],
+    "period": "Month 1",
+    "watch_items": []
+  },
+  "SaleCompRefreshMonitor": {
+    "action_items": [
+      "Continue monitoring sale comp refresh on the standard reporting cadence."
+    ],
+    "asset_name": "Sunbelt Duplex",
+    "health_score": 100.0,
+    "kpis": [
+      {
+        "actual": 0.99,
+        "in_tolerance": true,
+        "name": "sale comp refresh",
+        "notes": "freshness of sale comp evidence",
+        "owner": "research_lead",
+        "target": 1.0,
+        "tolerance": 0.1,
+        "unit": "ratio",
+        "variance": -0.010000000000000009,
+        "variance_pct": -0.010000000000000009
+      }
+    ],
+    "period": "Month 1",
+    "watch_items": []
+  },
+  "TaxEscrowMonitor": {
+    "action_items": [
+      "Continue monitoring tax escrow on the standard reporting cadence."
+    ],
+    "asset_name": "Sunbelt Duplex",
+    "health_score": 100.0,
+    "kpis": [
+      {
+        "actual": 0.99,
+        "in_tolerance": true,
+        "name": "tax escrow",
+        "notes": "escrow balance versus projected tax bill",
+        "owner": "controller",
+        "target": 1.0,
+        "tolerance": 0.1,
+        "unit": "ratio",
+        "variance": -0.010000000000000009,
+        "variance_pct": -0.010000000000000009
+      }
+    ],
+    "period": "Month 1",
+    "watch_items": []
+  },
+  "TurnTimeMonitor": {
+    "action_items": [
+      "Continue monitoring turn time on the standard reporting cadence."
+    ],
+    "asset_name": "Sunbelt Duplex",
+    "health_score": 100.0,
+    "kpis": [
+      {
+        "actual": 1.08,
+        "in_tolerance": true,
+        "name": "turn time",
+        "notes": "days from move-out to rent-ready",
+        "owner": "maintenance_lead",
+        "target": 1.0,
+        "tolerance": 0.1,
+        "unit": "ratio",
+        "variance": 0.08000000000000007,
+        "variance_pct": 0.08000000000000007
+      }
+    ],
+    "period": "Month 1",
+    "watch_items": []
+  },
+  "UtilityRecoveryMonitor": {
+    "action_items": [
+      "Continue monitoring utility recovery on the standard reporting cadence."
+    ],
+    "asset_name": "Sunbelt Duplex",
+    "health_score": 100.0,
+    "kpis": [
+      {
+        "actual": 0.99,
+        "in_tolerance": true,
+        "name": "utility recovery",
+        "notes": "tenant reimbursements against utility expense",
+        "owner": "asset_manager",
+        "target": 1.0,
+        "tolerance": 0.1,
+        "unit": "ratio",
+        "variance": -0.010000000000000009,
+        "variance_pct": -0.010000000000000009
+      }
+    ],
+    "period": "Month 1",
+    "watch_items": []
+  }
+}

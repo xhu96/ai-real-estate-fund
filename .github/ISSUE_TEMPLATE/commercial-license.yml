@@ -1,0 +1,59 @@
+name: 💼 Commercial license request
+description: Request approval to use AI Real Estate Fund for a commercial purpose. This is NOT a bug report.
+title: "[Commercial License]: "
+labels: ["commercial-license"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This project is free for **noncommercial** use under the PolyForm Noncommercial License 1.0.0.
+        **Commercial use requires a separate commercial license from the author.**
+
+        Open this request and the author will follow up about terms. Please don't include anything
+        confidential — this issue is public. Share only what's needed to start the conversation.
+  - type: input
+    id: organization
+    attributes:
+      label: Company / organization
+      description: The legal entity that would hold the commercial license.
+      placeholder: Acme Capital LLC
+    validations:
+      required: true
+  - type: input
+    id: contact-email
+    attributes:
+      label: Contact email
+      description: Where the author should reach you about the commercial license.
+      placeholder: you@company.com
+    validations:
+      required: true
+  - type: textarea
+    id: intended-use
+    attributes:
+      label: Intended commercial use
+      description: What do you want to use the software for, and how would it be deployed?
+      placeholder: e.g. internal underwriting tool for a property-management firm; hosted SaaS; embedded in a product…
+    validations:
+      required: true
+  - type: dropdown
+    id: scale
+    attributes:
+      label: Approximate scale
+      description: A rough sense of usage helps the author propose terms.
+      options:
+        - Single user / evaluation
+        - Small team (2–25)
+        - Company-wide
+        - Embedded in a product or hosted service
+        - Other (describe above)
+    validations:
+      required: false
+  - type: checkboxes
+    id: acknowledgements
+    attributes:
+      label: Acknowledgement
+      options:
+        - label: I understand commercial use is not permitted until the author grants a commercial license.
+          required: true
+        - label: I understand this issue is public and I have not included confidential information.
+          required: true

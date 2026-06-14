@@ -1,0 +1,10 @@
+market,address,monthly_rent,bedrooms,bathrooms,square_feet,unit_count,distance_miles,source,confidence,notes
+"San Antonio, TX",1420 W Ashby Pl,3600,4,2,1850,2,0.4,example_fixture,0.74,Fixture comp for demo only
+"San Antonio, TX",811 W Magnolia Ave,3850,4,2,1920,2,0.7,example_fixture,0.72,Fixture comp for demo only
+"San Antonio, TX",2506 N Flores St,3450,4,2,1760,2,0.9,example_fixture,0.7,Fixture comp for demo only
+"Raleigh, NC",608 Oakwood Ave,5650,8,4,3300,4,0.8,example_fixture,0.7,Fixture comp for demo only
+"Raleigh, NC",311 New Bern Pl,5400,8,4,3150,4,1.1,example_fixture,0.68,Fixture comp for demo only
+"Raleigh, NC",923 Mordecai Dr,5900,8,4,3400,4,1.3,example_fixture,0.68,Fixture comp for demo only
+"Cleveland, OH",4412 Bridge Ave,1425,3,1,1280,1,0.5,example_fixture,0.71,Fixture comp for demo only
+"Cleveland, OH",3329 W 48th St,1500,3,1,1360,1,0.9,example_fixture,0.68,Fixture comp for demo only
+"Cleveland, OH",5207 Franklin Blvd,1325,3,1,1190,1,1.4,example_fixture,0.66,Fixture comp for demo only
