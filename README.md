@@ -11,12 +11,12 @@ Inspired by [virattt/ai-hedge-fund](https://github.com/virattt/ai-hedge-fund), w
 
 > **Important:** This is decision-support software for learning and research. It is not financial, legal, tax, lending, valuation, or investment advice. Real-world use requires licensed data, professional review, and human investment approval.
 
-![Analyze a property](docs/images/analyze.png)
+![Overview](docs/images/dashboard.png) 
 
 <details>
-<summary>More screenshots: overview, the committee roster, scenario stress, and saved runs</summary>
+<summary>More screenshots: Analyze a property, the committee roster, scenario stress, and saved runs</summary>
 
-![Overview](docs/images/dashboard.png)
+![Analyze a property](docs/images/analyze.png)
 
 ![Committee roster](docs/images/committee.png)
 
